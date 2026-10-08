@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orders & Subscriptions | YardShield Admin</title>
+  <meta name="description" content="Track YardShield subscriptions and one-off orders: plans, billing cycles, amounts, next charge dates and status, with search and filters for past-due accounts.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/pages/admin-subscriptions.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="Orders & Subscriptions | YardShield Admin">
+  <meta property="og:description" content="Track YardShield subscriptions and one-off orders: plans, billing cycles, amounts, next charge dates and status, with search and filters for past-due accounts.">
+  <meta property="og:url" content="https://www.yardshield.example/pages/admin-subscriptions.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body class="app-body">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app-shell">
+    <!-- Sidebar: inline on large screens, offcanvas below 992px -->
+    <aside class="app-sidebar offcanvas-lg offcanvas-start" id="appSidebar" tabindex="-1" aria-labelledby="sidebarLabel">
+      <div class="d-flex align-items-center justify-content-between">
+        <a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="Close menu"></button>
+      </div>
+      <nav aria-label="Admin navigation">
+        <p class="side-label" id="sidebarLabel">Admin</p>
+        <ul class="side-nav"><li><a href="admin.html"><i class="bi bi-bar-chart-line" aria-hidden="true"></i>Analytics</a></li><li><a href="admin-users.html"><i class="bi bi-people" aria-hidden="true"></i>Users</a></li><li><a href="admin-subscriptions.html" aria-current="page"><i class="bi bi-receipt" aria-hidden="true"></i>Orders &amp; subscriptions</a></li><li><a href="admin-messages.html"><i class="bi bi-inbox" aria-hidden="true"></i>Messages</a></li></ul>
+        <p class="side-label">Switch</p>
+        <ul class="side-nav">
+          <li><a href="dashboard.html"><i class="bi bi-person" aria-hidden="true"></i>Customer portal</a></li>
+          <li><a href="index.html"><i class="bi bi-globe2" aria-hidden="true"></i>Back to website</a></li>
+          <li><a href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+        </ul>
+      </nav>
+      
+    </aside>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <button class="icon-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#appSidebar" aria-controls="appSidebar" aria-label="Open navigation"><i class="bi bi-list" aria-hidden="true"></i></button>
+        <h1>Orders &amp; subscriptions</h1>
+        <div class="header-actions ms-auto">
+          <button type="button" class="btn btn-sm btn-ghost d-none d-md-inline-flex" data-dir-toggle aria-pressed="false" title="Switch text direction (preview Arabic/Hebrew layout)"><i class="bi bi-translate" aria-hidden="true"></i><span data-dir-label>RTL</span><span class="visually-hidden"> layout</span></button>
+          <button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button>
+          <div class="dropdown">
+            <button class="icon-btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications, 2 unread">
+              <i class="bi bi-bell" aria-hidden="true"></i><span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger rounded-circle" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="min-width:300px">
+              <li class="px-2 py-1 small fw-bold text-muted">Notifications</li>
+              <li><a class="dropdown-item" href="admin-messages.html"><i class="bi bi-calendar-check" aria-hidden="true"></i>3 new support tickets</a></li>
+              <li><a class="dropdown-item" href="admin-subscriptions.html"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i>12 renewals due this week</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-ghost px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="avatar avatar-initials" style="width:32px;height:32px;font-size:.8rem" aria-hidden="true">AK</span>
+              <span class="d-none d-md-inline">Alex Kim</span><i class="bi bi-chevron-down small d-none d-sm-inline" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="px-2 py-1"><strong class="d-block small">Alex Kim</strong><span class="small text-muted">Admin</span></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="admin-users.html"><i class="bi bi-person" aria-hidden="true"></i>Users</a></li>
+              <li><a class="dropdown-item" href="admin-subscriptions.html"><i class="bi bi-credit-card" aria-hidden="true"></i>Billing</a></li>
+              <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main id="main" class="app-content" tabindex="-1">
+
+        <div class="row g-3 g-lg-4 mb-4">
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">Active subscriptions</span><span class="icon-circle sm "><i class="bi bi-receipt" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">48,212</div><div class="small text-muted d-flex gap-2 align-items-center">all plans</div></div></div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">Renewals this week</span><span class="icon-circle sm teal"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">1,284</div><div class="small text-muted d-flex gap-2 align-items-center">$102k</div></div></div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">Past due</span><span class="icon-circle sm amber"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">213</div><div class="small text-muted d-flex gap-2 align-items-center">auto-retry on</div></div></div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">One-off orders (30d)</span><span class="icon-circle sm "><i class="bi bi-bag-check" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">642</div><div class="small text-muted d-flex gap-2 align-items-center">events &amp; wasps</div></div></div></div></div>
+        </div>
+        <section class="card p-3 p-md-4" aria-label="Subscriptions and orders">
+          <div class="row g-2 align-items-end mb-3" data-table-tools="#subsTable">
+            <div class="col-md-5"><label for="s-search" class="form-label small">Search</label><input id="s-search" type="search" class="form-control" placeholder="ID, customer or plan" data-table-search></div>
+            <div class="col-md-3"><label for="s-status" class="form-label small">Status</label><select id="s-status" class="form-select" data-table-status><option value="all">All</option><option value="active">Active</option><option value="paused">Paused</option><option value="past_due">Past due</option><option value="cancelled">Cancelled</option></select></div>
+            <div class="col-md-4 d-flex justify-content-md-end align-items-center"><span class="small text-muted" data-table-count role="status" aria-live="polite"></span></div>
+          </div>
+          <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div></div><div class="real-view"><div class="table-responsive"><table class="table table-hover table-stack mb-0" id="subsTable"><caption class="visually-hidden">Subscriptions and one-off orders</caption><thead><tr><th scope="col">ID</th><th scope="col">Customer</th><th scope="col">Plan</th><th scope="col">Billing</th><th scope="col">Amount</th><th scope="col">Next charge</th><th scope="col">Status</th></tr></thead><tbody><tr data-status="active"><td data-label="ID" class="fw-semibold">SUB-10482</td><td data-label="Customer">Jordan Rivera</td><td data-label="Plan">Standard</td><td data-label="Billing">Monthly</td><td data-label="Amount">$79.00</td><td data-label="Next charge">Nov 1, 2026</td><td data-label="Status"><span class="badge badge-soft">Active</span></td></tr><tr data-status="active"><td data-label="ID" class="fw-semibold">SUB-10477</td><td data-label="Customer">Marcus Taylor</td><td data-label="Plan">Premium</td><td data-label="Billing">Annual</td><td data-label="Amount">$1,188.00</td><td data-label="Next charge">May 12, 2027</td><td data-label="Status"><span class="badge badge-soft">Active</span></td></tr><tr data-status="paused"><td data-label="ID" class="fw-semibold">SUB-10461</td><td data-label="Customer">Danielle Ross</td><td data-label="Plan">Basic</td><td data-label="Billing">Monthly</td><td data-label="Amount">$49.00</td><td data-label="Next charge">Mar 1, 2027</td><td data-label="Status"><span class="badge badge-amber">Paused</span></td></tr><tr data-status="past_due"><td data-label="ID" class="fw-semibold">SUB-10455</td><td data-label="Customer">Grace Liu</td><td data-label="Plan">Standard</td><td data-label="Billing">Monthly</td><td data-label="Amount">$79.00</td><td data-label="Next charge">Oct 3, 2026</td><td data-label="Status"><span class="badge badge-danger">Past due</span></td></tr><tr data-status="active"><td data-label="ID" class="fw-semibold">SUB-10440</td><td data-label="Customer">Owen Brooks</td><td data-label="Plan">Premium</td><td data-label="Billing">Monthly</td><td data-label="Amount">$119.00</td><td data-label="Next charge">Oct 20, 2026</td><td data-label="Status"><span class="badge badge-soft">Active</span></td></tr><tr data-status="cancelled"><td data-label="ID" class="fw-semibold">SUB-10418</td><td data-label="Customer">Lena Fischer</td><td data-label="Plan">Basic</td><td data-label="Billing">Monthly</td><td data-label="Amount">$49.00</td><td data-label="Next charge">&mdash;</td><td data-label="Status"><span class="badge badge-muted">Cancelled</span></td></tr><tr data-status="active"><td data-label="ID" class="fw-semibold">ORD-88213</td><td data-label="Customer">Samuel Ortiz</td><td data-label="Plan">Event treatment</td><td data-label="Billing">One-off</td><td data-label="Amount">$59.00</td><td data-label="Next charge">Oct 10, 2026</td><td data-label="Status"><span class="badge badge-soft">Active</span></td></tr></tbody></table></div></div></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

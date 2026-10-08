@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation | YardShield HTML Template</title>
+  <meta name="description" content="How to install and customize the YardShield Bootstrap 5 template: file structure, colors, fonts, content, dark mode, RTL, forms, integrations, SEO and credits.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/documentation/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="Documentation | YardShield HTML Template">
+  <meta property="og:description" content="How to install and customize the YardShield Bootstrap 5 template: file structure, colors, fonts, content, dark mode, RTL, forms, integrations, SEO and credits.">
+  <meta property="og:url" content="https://www.yardshield.example/documentation/index.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Documentation">
+      <div class="container">
+        <a class="navbar-brand " href="../pages/index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a>
+        <div class="header-actions"><button type="button" class="btn btn-sm btn-ghost " data-dir-toggle aria-pressed="false" title="Switch text direction (preview Arabic/Hebrew layout)"><i class="bi bi-translate" aria-hidden="true"></i><span data-dir-label>RTL</span><span class="visually-hidden"> layout</span></button><button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button><a class="btn btn-primary" href="../pages/index.html">View template</a></div>
+      </div>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="page-header"><div class="container"><span class="badge badge-soft mb-2">v1.0.0</span><h1>YardShield documentation</h1><p class="lead mb-0">Install, customize and launch the template.</p></div></section>
+    <div class="container section">
+      <div class="row g-4 g-lg-5">
+        <aside class="col-lg-3" aria-label="Contents">
+          <nav class="card p-3 position-sticky" style="top:96px"><p class="side-label pt-0">Contents</p><ul class="side-nav"><li><a href="#install">Installation</a></li><li><a href="#structure">File structure</a></li><li><a href="#pages">Page structure</a></li><li><a href="#colors">Colors</a></li><li><a href="#fonts">Fonts</a></li><li><a href="#content">Content &amp; images</a></li><li><a href="#theme">Dark mode &amp; RTL</a></li><li><a href="#components">Components</a></li><li><a href="#forms">Forms &amp; validation</a></li><li><a href="#integrations">Integrations</a></li><li><a href="#seo">SEO, performance &amp; accessibility</a></li><li><a href="#browsers">Browser support</a></li><li><a href="#credits">Credits</a></li><li><a href="#photos">Photo list</a></li><li><a href="#changelog">Changelog</a></li><li><a href="#support">Support</a></li></ul></nav>
+        </aside>
+        <div class="col-lg-9">
+          <section id="install" class="mb-5" aria-labelledby="install-h"><h2 id="install-h" class="h3">Installation</h2>
+<p>No build tools are required.</p>
+<ol>
+  <li>Unzip <code>yardshield.zip</code>.</li>
+  <li>Open <code>index.html</code> in any modern browser. It forwards to <code>pages/index.html</code>.</li>
+  <li>To publish, upload the whole folder to any static host (Netlify, Vercel, GitHub Pages, S3, cPanel). Point your domain at the folder; optionally set <code>/pages</code> as the web root.</li>
+</ol>
+<p>Bootstrap 5.3.3, Bootstrap Icons 1.11.3 and Chart.js 4.4.1 are bundled in <code>assets/vendor</code>, so pages work offline and from <code>file://</code>. Only the two Google Fonts load from the internet; without them the system font is used.</p>
+<p>Optional local server: <code>npx serve .</code> or <code>python3 -m http.server</code> inside the folder.</p>
+          </section>
+          <section id="structure" class="mb-5" aria-labelledby="structure-h"><h2 id="structure-h" class="h3">File structure</h2>
+<pre><code>yardshield/
+├── index.html                 entry point (redirects to pages/index.html)
+├── assets/
+│   ├── css/style.css          tokens + components (sections 01–17)
+│   ├── css/dark-mode.css      [data-bs-theme="dark"] token overrides
+│   ├── css/rtl.css            [dir="rtl"] fixes
+│   ├── js/main.js             site-wide modules (window.YS)
+│   ├── js/dashboard.js        portal + admin modules (window.YSD)
+│   ├── js/plugins/calendar.js YSCalendar component
+│   ├── vendor/                bootstrap, bootstrap-icons, chartjs
+│   ├── images/                *.webp + *.jpg pairs, favicon.svg
+│   └── fonts/                 self-hosting guide
+├── pages/                     all HTML pages
+├── documentation/             this guide
+├── sitemap.xml · robots.txt · README.md</code></pre>
+          </section>
+          <section id="pages" class="mb-5" aria-labelledby="pages-h"><h2 id="pages-h" class="h3">Page structure</h2>
+<p>Every public page shares one header and one footer, has exactly one <code>&lt;h1&gt;</code>, a unique title (&le;60 characters) and meta description (150&ndash;160 characters).</p>
+<div class="table-responsive"><table class="table">
+<thead><tr><th scope="col">Page</th><th scope="col">Purpose</th></tr></thead><tbody>
+<tr><td>index.html (Home 1)</td><td>Classic layout: split hero with zip checker, trust strip, what we do, how it works, seasonal tabs, guarantee, services, pricing, dashboard preview, reviews, FAQ, CTA</td></tr>
+<tr><td>index-2.html (Home 2)</td><td>Photo-led layout: full-bleed hero with zip checker and stats, alternating feature rows, pest season grid, comparison table, timeline, split guarantee, pricing toggle, phone app showcase, review carousel, blog teasers, two-column FAQ, CTA. Pick one as your home page, or delete the other and repoint the Home menu in each page.</td></tr>
+<tr><td>about.html</td><td>Story, mission, team, certifications, testimonials</td></tr>
+<tr><td>services.html / service-details.html</td><td>Service grid; in-depth service with inclusions, safety, pricing table and FAQ</td></tr>
+<tr><td>pricing.html</td><td>Monthly/annual toggle, 3 plans, comparison table, add-ons, guarantee</td></tr>
+<tr><td>blog.html / blog-details.html</td><td>Searchable, filterable list; article with sidebar</td></tr>
+<tr><td>contact.html</td><td>Validated form, service-area checker, contact info, map placeholder</td></tr>
+<tr><td>login / register / forgot-password</td><td>Portal entry with validation, password toggle and strength meter</td></tr>
+<tr><td>dashboard*.html</td><td>Overview, schedule (calendar), history, reports (charts), billing, profile &amp; property, messages</td></tr>
+<tr><td>admin*.html</td><td>Analytics, users, orders &amp; subscriptions, support inbox</td></tr>
+<tr><td>404, coming-soon, maintenance</td><td>Utility pages. <code>coming-soon.html?mode=maintenance</code> shows the maintenance variant.</td></tr>
+</tbody></table></div>
+<p>Dashboard and auth pages carry <code>noindex</code> and are disallowed in <code>robots.txt</code>.</p>
+          </section>
+          <section id="colors" class="mb-5" aria-labelledby="colors-h"><h2 id="colors-h" class="h3">Colors</h2>
+<p>All colors live in <code>:root</code> at the top of <code>assets/css/style.css</code>. Components only read tokens, so changing a token restyles the whole site.</p>
+<div class="row g-3 mb-3">
+  <div class="col-6 col-md-3"><div class="p-3 rounded-3" style="background:var(--ys-primary);color:#fff">--ys-primary<br><small>#1e7b3c</small></div></div>
+  <div class="col-6 col-md-3"><div class="p-3 rounded-3" style="background:var(--ys-secondary);color:#fff">--ys-secondary<br><small>#14532d</small></div></div>
+  <div class="col-6 col-md-3"><div class="p-3 rounded-3" style="background:var(--ys-accent);color:var(--ys-accent-ink)">--ys-accent<br><small>#f2a30f</small></div></div>
+  <div class="col-6 col-md-3"><div class="p-3 rounded-3 border" style="background:var(--ys-bg)">--ys-bg<br><small>#f6f8f3</small></div></div>
+</div>
+<pre><code>:root {
+  --ys-primary: #1e7b3c;        /* buttons, links, success  */
+  --ys-primary-strong: #16692f; /* hover                    */
+  --ys-secondary: #14532d;      /* trust surfaces, focus    */
+  --ys-accent: #f2a30f;         /* primary CTAs             */
+  --ys-accent-ink: #1b1f1d;     /* text on accent           */
+}</code></pre>
+<p>Also update <code>--bs-primary-rgb</code> to the RGB of your primary color, and the matching values in <code>dark-mode.css</code>. All default pairs meet WCAG AA (4.5:1 or better); re-check contrast for your own colors.</p>
+          </section>
+          <section id="fonts" class="mb-5" aria-labelledby="fonts-h"><h2 id="fonts-h" class="h3">Fonts</h2>
+<p>Two families: <strong>Bricolage Grotesque</strong> (headings) and <strong>Figtree</strong> (body). To change them:</p>
+<ol><li>Replace the Google Fonts URL (search <code>fonts.googleapis.com</code> in <code>/pages</code>).</li>
+<li>Update <code>--ys-font-heading</code> and <code>--ys-font-body</code> in <code>style.css</code> (and in <code>rtl.css</code> if you use RTL).</li></ol>
+<p>See <code>assets/fonts/README.md</code> to self-host.</p>
+          </section>
+          <section id="content" class="mb-5" aria-labelledby="content-h"><h2 id="content-h" class="h3">Content &amp; images</h2>
+<ul>
+<li><strong>Brand name:</strong> find &amp; replace <code>YardShield</code>. The logo is an inline SVG in the header/footer (<code>.brand-mark</code>) and <code>assets/images/favicon.svg</code>.</li>
+<li><strong>Domain:</strong> replace <code>yardshield.example</code> in canonical tags, Open Graph, JSON-LD, <code>sitemap.xml</code> and <code>robots.txt</code>.</li>
+<li><strong>Photos:</strong> the template uses real photography from <a href="https://unsplash.com/license">Unsplash</a> (free for commercial use, no attribution required). Each image is a <code>&lt;picture&gt;</code> with responsive WebP sources (480/800/1200&nbsp;px), a JPG fallback and explicit <code>width</code>/<code>height</code>, so there is no layout shift. Unsplash crops each photo to its slot automatically.</li>
+<li><strong>Offline fallback:</strong> if a photo can&rsquo;t load (no internet), the page swaps in the matching illustration from <code>assets/images</code>.</li>
+<li><strong>Using your own photos:</strong> the cleanest route is to save them as <code>assets/images/&lt;name&gt;.webp</code> and <code>.jpg</code> (names listed below) and remove the photo URLs from the HTML, so nothing depends on a third-party host. Recommended sizes: 1200&times;750 for cards and sections, 1200&times;900 for the hero, 1200&times;1400 for the login/register side panels, 480&times;480 for team portraits.</li>
+<li><strong>Prices:</strong> plan cards use <code>data-monthly</code> and <code>data-annual</code> attributes (annual = per-month price when billed yearly).</li>
+<li><strong>Service area:</strong> edit <code>YS.zip.SERVICE_PREFIXES</code> in <code>main.js</code> or replace it with an API call.</li>
+</ul>
+          </section>
+          <section id="theme" class="mb-5" aria-labelledby="theme-h"><h2 id="theme-h" class="h3">Dark mode &amp; RTL</h2>
+<p><strong>Dark mode</strong> follows the visitor&rsquo;s OS setting until they press the moon/sun toggle (<code>[data-theme-toggle]</code>). The choice is saved in <code>localStorage</code>. An inline script in <code>&lt;head&gt;</code> applies it before first paint. Charts re-render on the <code>ys:themechange</code> event.</p>
+<p><strong>RTL:</strong> the <em>RTL</em> button (<code>[data-dir-toggle]</code>) previews the mirrored layout by setting <code>dir="rtl"</code> and swapping in <code>bootstrap.rtl.min.css</code>. For a real Arabic or Hebrew site set <code>&lt;html lang="ar" dir="rtl"&gt;</code> and link the RTL Bootstrap file directly. Custom CSS uses logical properties, so it mirrors automatically.</p>
+          </section>
+          <section id="components" class="mb-5" aria-labelledby="components-h"><h2 id="components-h" class="h3">Components</h2>
+<p>Reusable classes, used consistently across pages:</p>
+<div class="d-flex flex-wrap gap-2 mb-3"><button class="btn btn-primary">btn-primary</button><button class="btn btn-accent">btn-accent</button><button class="btn btn-secondary">btn-secondary</button><button class="btn btn-outline-primary">btn-outline-primary</button><button class="btn btn-ghost">btn-ghost</button></div>
+<div class="d-flex flex-wrap gap-2 mb-3"><span class="badge badge-soft">badge-soft</span><span class="badge badge-teal">badge-teal</span><span class="badge badge-amber">badge-amber</span><span class="badge badge-danger">badge-danger</span><span class="badge badge-muted">badge-muted</span></div>
+<ul>
+<li><code>.card</code> + <code>.card-hover</code>, <code>.icon-circle</code> (<code>.sm</code>, <code>.teal</code>, <code>.amber</code>), <code>.check-list</code>, <code>.pest-chip</code></li>
+<li><code>.table-stack</code> &mdash; tables become cards under 640px; give each <code>&lt;td&gt;</code> a <code>data-label</code>.</li>
+<li><code>[data-skeleton]</code> &mdash; wrap a <code>.skeleton-view</code> and a <code>.real-view</code>; call <code>YSD.skeletons.done(el)</code> when data arrives.</li>
+<li>Spacing tokens <code>--space-1</code> (8px) to <code>--space-12</code> (96px). Breakpoints in custom CSS: &lt;640, 640&ndash;1023, 1024&ndash;1279, &ge;1280. Bootstrap&rsquo;s own grid and navbar collapse at 992px.</li>
+</ul>
+          </section>
+          <section id="forms" class="mb-5" aria-labelledby="forms-h"><h2 id="forms-h" class="h3">Forms &amp; validation</h2>
+<p>Add <code>class="needs-validation" novalidate</code> to a form and an empty <code>.invalid-feedback</code> after each field. <code>YS.forms</code> validates on blur and submit, writes a clear message, sets <code>aria-invalid</code>/<code>aria-describedby</code> and focuses the first error.</p>
+<ul>
+<li>Custom messages: <code>data-msg-required</code>, <code>data-msg-email</code>, <code>data-msg-pattern</code>.</li>
+<li>Confirmation fields: <code>data-match="#password"</code>.</li>
+<li>After success: <code>data-toast="…"</code> shows a toast, <code>data-redirect="page.html"</code> navigates, a <code>.form-success</code> block is revealed.</li>
+<li>If the form has an <code>http(s)</code> <code>action</code>, it is posted with <code>fetch</code> (works with Formspree and similar).</li>
+</ul>
+          </section>
+          <section id="integrations" class="mb-5" aria-labelledby="integrations-h"><h2 id="integrations-h" class="h3">Integrations</h2>
+<p>Search the code for <code>TODO:</code>; each integration point is marked.</p>
+<div class="table-responsive"><table class="table"><thead><tr><th scope="col">Service</th><th scope="col">Where</th><th scope="col">How</th></tr></thead><tbody>
+<tr><td>Formspree</td><td>contact.html</td><td>Set <code>action="https://formspree.io/f/YOUR_ID" method="POST"</code> on the form.</td></tr>
+<tr><td>Netlify Forms</td><td>contact.html</td><td>Add <code>name="contact" data-netlify="true"</code> and <code>&lt;input type="hidden" name="form-name" value="contact"&gt;</code>; remove <code>novalidate</code>-only submit handling if you prefer native posts.</td></tr>
+<tr><td>Mailchimp / ConvertKit</td><td>Footer newsletter, coming-soon</td><td>Set the form <code>action</code> to your embedded-form URL and match the email field name (<code>EMAIL</code> for Mailchimp).</td></tr>
+<tr><td>Google Maps</td><td>contact.html</td><td>Replace <code>.map-placeholder</code> with the commented <code>&lt;iframe&gt;</code> embed.</td></tr>
+<tr><td>Booking / calendar</td><td>dashboard.js &rarr; <code>YSD.schedule</code></td><td>Load events in <code>seed()</code>, send changes in <code>commit()</code>. Works with Calendly/Acuity webhooks or your API.</td></tr>
+<tr><td>Stripe</td><td>pricing.html, dashboard-billing.html</td><td>Point plan buttons at Stripe Payment Links / Checkout; mount Stripe Elements into <code>#stripe-card-element</code> or open the Customer Portal.</td></tr>
+<tr><td>PayPal</td><td>dashboard-billing.html</td><td>Render PayPal Buttons into <code>#paypal-button</code>.</td></tr>
+<tr><td>Charts</td><td>dashboard.js &rarr; <code>YSD.charts.config()</code></td><td>Replace the demo arrays with your data. Colors come from CSS tokens.</td></tr>
+</tbody></table></div>
+          </section>
+          <section id="seo" class="mb-5" aria-labelledby="seo-h"><h2 id="seo-h" class="h3">SEO, performance &amp; accessibility</h2>
+<ul>
+<li>Unique titles and descriptions, canonical URLs, Open Graph and Twitter tags on every page.</li>
+<li>JSON-LD: <code>LocalBusiness</code> + <code>FAQPage</code> (home), <code>ItemList</code> of <code>Service</code> (services), <code>Service</code> with <code>Offer</code>s (service details, pricing), <code>BlogPosting</code> (article).</li>
+<li><code>sitemap.xml</code> lists public pages; <code>robots.txt</code> excludes the portal.</li>
+<li>Performance: WebP images with fallbacks, explicit dimensions, lazy-loading below the fold, <code>fetchpriority="high"</code> on the hero, deferred scripts, no render-blocking JS. For best scores, self-host fonts and serve with compression and caching.</li>
+<li>Accessibility (WCAG 2.1 AA): skip link, visible focus rings, 44px touch targets, labelled controls, ARIA live regions for dynamic results, keyboard-operable calendar (arrow keys), charts with text alternatives, <code>prefers-reduced-motion</code> support.</li>
+</ul>
+          </section>
+          <section id="browsers" class="mb-5" aria-labelledby="browsers-h"><h2 id="browsers-h" class="h3">Browser support</h2><p>Latest two versions of Chrome, Edge, Firefox and Safari (desktop and iOS/Android). Uses CSS <code>color-mix()</code> and <code>aspect-ratio</code>; older browsers degrade gracefully.</p>
+          </section>
+          <section id="credits" class="mb-5" aria-labelledby="credits-h"><h2 id="credits-h" class="h3">Credits</h2>
+<ul>
+<li><a href="https://getbootstrap.com/">Bootstrap 5.3.3</a> &mdash; MIT</li>
+<li><a href="https://icons.getbootstrap.com/">Bootstrap Icons 1.11.3</a> &mdash; MIT</li>
+<li><a href="https://www.chartjs.org/">Chart.js 4.4.1</a> &mdash; MIT</li>
+<li><a href="https://fonts.google.com/specimen/Bricolage+Grotesque">Bricolage Grotesque</a> and <a href="https://fonts.google.com/specimen/Figtree">Figtree</a> &mdash; SIL Open Font License</li>
+<li>Photography from <a href="https://unsplash.com/">Unsplash</a> under the <a href="https://unsplash.com/license">Unsplash License</a>. Photo IDs are listed in the table below; open <code>https://images.unsplash.com/photo-&lt;id&gt;</code> to view each one. People shown are not affiliated with YardShield; for advertising, consider your own photos.</li>
+<li>Fallback illustrations in <code>assets/images</code> were created for this template and may be used freely.</li>
+<li>Names, addresses, reviews and statistics in the template are fictional sample content.</li>
+</ul>
+          </section>
+          <section id="photos" class="mb-5" aria-labelledby="photos-h"><h2 id="photos-h" class="h3">Photo list</h2><p>Every photo slot, by name. Search the HTML for an ID to swap that photo.</p><div class="table-responsive"><table class="table table-stack small"><thead><tr><th scope="col">Slot</th><th scope="col">Shows</th><th scope="col">Unsplash photo</th></tr></thead><tbody><tr><td><code>hero-family-yard</code></td><td>Three children relaxing together on the lawn of a sunny backyard</td><td><a href="https://images.unsplash.com/photo-1784828985296-64d1d85c1454">photo-1784828985296-64d1d85c1454</a></td></tr><tr><td><code>technician-spraying</code></td><td>Technician operating a pressure sprayer outdoors</td><td><a href="https://images.unsplash.com/photo-1760527072562-6ab5bd3054dc">photo-1760527072562-6ab5bd3054dc</a></td></tr><tr><td><code>technician-truck</code></td><td>Technician carrying a tank sprayer through a garden</td><td><a href="https://images.unsplash.com/photo-1749030432965-da86e3abc957">photo-1749030432965-da86e3abc957</a></td></tr><tr><td><code>service-barrier</code></td><td>Technician walking a garden path with a sprayer to treat the borders</td><td><a href="https://images.unsplash.com/photo-1749030415358-f533ad412767">photo-1749030415358-f533ad412767</a></td></tr><tr><td><code>service-misting</code></td><td>Fine mist spraying over green foliage</td><td><a href="https://images.unsplash.com/photo-1769927954927-13ffa6b7756c">photo-1769927954927-13ffa6b7756c</a></td></tr><tr><td><code>service-tick-flea</code></td><td>Brown and white dog sitting on a green lawn</td><td><a href="https://images.unsplash.com/photo-1604165094771-7af34f7fd4cd">photo-1604165094771-7af34f7fd4cd</a></td></tr><tr><td><code>service-ant-perimeter</code></td><td>Close-up of an ant against a soft green background</td><td><a href="https://images.unsplash.com/photo-1763810885136-16d4e379e891">photo-1763810885136-16d4e379e891</a></td></tr><tr><td><code>service-wasp</code></td><td>Paper wasp nest hanging from a tree branch</td><td><a href="https://images.unsplash.com/photo-1755039022246-d7e7f58b54c7">photo-1755039022246-d7e7f58b54c7</a></td></tr><tr><td><code>service-seasonal</code></td><td>Tree with yellow autumn leaves scattered across the ground</td><td><a href="https://images.unsplash.com/photo-1606090310079-4be08582f123">photo-1606090310079-4be08582f123</a></td></tr><tr><td><code>guarantee-yard</code></td><td>Large, healthy green lawn bordered by bushes and trees</td><td><a href="https://images.unsplash.com/photo-1668120089662-42642838cfef">photo-1668120089662-42642838cfef</a></td></tr><tr><td><code>about-story</code></td><td>YardShield technician holding a spray gun, ready to treat a yard</td><td><a href="https://images.unsplash.com/photo-1747659629851-a92bd71149f6">photo-1747659629851-a92bd71149f6</a></td></tr><tr><td><code>about-mission</code></td><td>Honeybee resting on a purple flower</td><td><a href="https://images.unsplash.com/photo-1600752384899-7d3dcbb2428c">photo-1600752384899-7d3dcbb2428c</a></td></tr><tr><td><code>auth-login</code></td><td>Backyard shelter with string lights and outdoor furniture at dusk</td><td><a href="https://images.unsplash.com/photo-1784454793008-3d6e632db3d7">photo-1784454793008-3d6e632db3d7</a></td></tr><tr><td><code>auth-register</code></td><td>Brother and sister playing catch outdoors at sunset</td><td><a href="https://images.unsplash.com/photo-1778114008474-db8f9b9a4698">photo-1778114008474-db8f9b9a4698</a></td></tr><tr><td><code>contact-home</code></td><td>Green lawn in front of a white house</td><td><a href="https://images.unsplash.com/photo-1589321084815-4e5f1740cbc6">photo-1589321084815-4e5f1740cbc6</a></td></tr><tr><td><code>coming-soon-dusk</code></td><td>Sprinklers watering a green lawn at sunset</td><td><a href="https://images.unsplash.com/photo-1770664945615-52203ab54c88">photo-1770664945615-52203ab54c88</a></td></tr><tr><td><code>blog-1</code></td><td>Close-up of a mosquito resting on a leaf</td><td><a href="https://images.unsplash.com/photo-1635496471665-4e67e0e87399">photo-1635496471665-4e67e0e87399</a></td></tr><tr><td><code>blog-2</code></td><td>Brown curly-haired dog standing in green grass</td><td><a href="https://images.unsplash.com/photo-1583091618471-56becbdb1c00">photo-1583091618471-56becbdb1c00</a></td></tr><tr><td><code>blog-3</code></td><td>Still garden pond surrounded by plants and flowers</td><td><a href="https://images.unsplash.com/photo-1556010117-29c6a0a69e0f">photo-1556010117-29c6a0a69e0f</a></td></tr><tr><td><code>blog-4</code></td><td>Lavender plants in bloom with green foliage</td><td><a href="https://images.unsplash.com/photo-1782868264365-d433de58ac33">photo-1782868264365-d433de58ac33</a></td></tr><tr><td><code>blog-5</code></td><td>Backyard patio with a table, chairs and a bench</td><td><a href="https://images.unsplash.com/photo-1634316888962-75074307f81c">photo-1634316888962-75074307f81c</a></td></tr><tr><td><code>blog-6</code></td><td>Inspector writing notes on a clipboard outdoors</td><td><a href="https://images.unsplash.com/photo-1767200947939-5a92010b347f">photo-1767200947939-5a92010b347f</a></td></tr><tr><td><code>h2-hero</code></td><td>Cozy backyard dinner table under string lights on an autumn evening</td><td><a href="https://images.unsplash.com/photo-1779361525614-2daa01ed2607">photo-1779361525614-2daa01ed2607</a></td></tr><tr><td><code>h2-treat</code></td><td>Lush garden with mixed plants, a birdhouse and a stone path</td><td><a href="https://images.unsplash.com/photo-1779565145536-ccdf57517151">photo-1779565145536-ccdf57517151</a></td></tr><tr><td><code>h2-return</code></td><td>Grassy backyard with a fence and a house in the background</td><td><a href="https://images.unsplash.com/photo-1681853108586-f29b4ef5c0fb">photo-1681853108586-f29b4ef5c0fb</a></td></tr><tr><td><code>h2-track</code></td><td>Woman checking her phone in a field of purple flowers</td><td><a href="https://images.unsplash.com/photo-1677807611874-bd9062bfe589">photo-1677807611874-bd9062bfe589</a></td></tr><tr><td><code>h2-guarantee</code></td><td>Macrame swing hanging in a lush green garden</td><td><a href="https://images.unsplash.com/photo-1750683084791-69bc6eab4083">photo-1750683084791-69bc6eab4083</a></td></tr><tr><td><code>team-1</code></td><td>Portrait of Elena Morales, founder and CEO</td><td><a href="https://images.unsplash.com/photo-1494790108377-be9c29b29330">photo-1494790108377-be9c29b29330</a></td></tr><tr><td><code>team-2</code></td><td>Portrait of James Alvarez, head of field operations</td><td><a href="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d">photo-1507003211169-0a1dd7228f2d</a></td></tr><tr><td><code>team-3</code></td><td>Portrait of Dr. Aisha Bello, safety and compliance lead</td><td><a href="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e">photo-1573497019940-1c28c88b4f3e</a></td></tr><tr><td><code>team-4</code></td><td>Portrait of Ryan Choi, customer experience lead</td><td><a href="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">photo-1500648767791-00dcc994a43e</a></td></tr></tbody></table></div>
+          </section>
+          <section id="changelog" class="mb-5" aria-labelledby="changelog-h"><h2 id="changelog-h" class="h3">Changelog</h2><p><strong>1.2.0</strong> &mdash; October 6, 2026 &mdash; Second home page (index-2.html) and Home dropdown.</p><p><strong>1.1.0</strong> &mdash; October 6, 2026 &mdash; Real photography from Unsplash with responsive WebP/JPG and offline fallback.</p><p><strong>1.0.0</strong> &mdash; October 6, 2026 &mdash; Initial release: 25 pages, customer portal, admin dashboard, dark mode, RTL.</p>
+          </section>
+          <section id="support" class="mb-5" aria-labelledby="support-h"><h2 id="support-h" class="h3">Support</h2><p>For questions or bug reports, contact the template author. Include the page, browser and steps to reproduce. <!-- TODO: add your support email or marketplace profile link --></p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

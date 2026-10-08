@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Account | YardShield</title>
+  <meta name="description" content="Create your YardShield account, choose a mosquito and insect control plan and book your free yard inspection. No contract, and a 30-day money-back guarantee.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/pages/register.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="Create Account | YardShield">
+  <meta property="og:description" content="Create your YardShield account, choose a mosquito and insect control plan and book your free yard inspection. No contract, and a 30-day money-back guarantee.">
+  <meta property="og:url" content="https://www.yardshield.example/pages/register.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <main id="main" class="auth-wrap" tabindex="-1">
+    <div class="auth-panel">
+      <div class="auth-card">
+        <div class="d-flex justify-content-between align-items-center mb-5"><a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a><div class="d-flex gap-2"><button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></div></div>
+        <h1 class="h2 mb-2">Start your subscription</h1>
+        <p class="text-muted mb-4">Create an account &mdash; your free yard inspection is next.</p>
+        <form class="needs-validation" novalidate data-redirect="dashboard.html" aria-label="Create account">
+          <div class="alert alert-danger d-none" data-form-summary role="alert"></div>
+          <div class="row g-3">
+            <div class="col-sm-6"><label for="r-first" class="form-label">First name</label><input id="r-first" class="form-control" autocomplete="given-name" required><div class="invalid-feedback"></div></div>
+            <div class="col-sm-6"><label for="r-last" class="form-label">Last name</label><input id="r-last" class="form-control" autocomplete="family-name" required><div class="invalid-feedback"></div></div>
+            <div class="col-12"><label for="r-email" class="form-label">Email</label><input id="r-email" type="email" class="form-control" autocomplete="email" required><div class="invalid-feedback"></div></div>
+            <div class="col-sm-6"><label for="r-zip" class="form-label">Service zip code</label><input id="r-zip" class="form-control" inputmode="numeric" maxlength="5" pattern="\d{5}" data-msg-pattern="Enter a 5-digit zip code." autocomplete="postal-code" required><div class="invalid-feedback"></div></div>
+            <div class="col-sm-6"><label for="r-plan" class="form-label">Plan</label><select id="r-plan" class="form-select"><option value="basic">Basic &middot; $49/mo</option><option value="standard" selected>Standard &middot; $79/mo</option><option value="premium">Premium &middot; $119/mo</option></select></div>
+            <div class="col-12"><label for="r-pass" class="form-label">Password</label>
+              <div class="password-wrap"><input id="r-pass" type="password" class="form-control" autocomplete="new-password" required minlength="8" data-strength="#r-strength" aria-describedby="r-pass-help"><button type="button" class="toggle-pass" aria-label="Show password" aria-pressed="false"><i class="bi bi-eye" aria-hidden="true"></i></button></div>
+              <div class="strength" aria-hidden="true"><span id="r-strength"></span></div>
+              <div class="form-text" id="r-pass-help">At least 8 characters. <span id="r-strength-text" aria-live="polite"></span></div><div class="invalid-feedback"></div></div>
+            <div class="col-12"><label for="r-pass2" class="form-label">Confirm password</label><input id="r-pass2" type="password" class="form-control" autocomplete="new-password" required data-match="#r-pass"><div class="invalid-feedback"></div></div>
+            <div class="col-12"><div class="form-check"><input id="r-terms" class="form-check-input" type="checkbox" required><label for="r-terms" class="form-check-label">I agree to the service terms and privacy policy.</label></div><div class="invalid-feedback d-block"></div></div>
+            <div class="col-12"><button class="btn btn-accent btn-lg w-100" type="submit">Create account &amp; book inspection</button></div>
+          </div>
+          <p class="text-center mt-4 mb-0">Already a customer? <a href="login.html" class="fw-bold">Log in</a></p>
+        </form>
+        <script>
+          /* Pre-select the plan passed from pricing.html (?plan=premium) */
+          (function () { var p = new URLSearchParams(location.search).get('plan'); var s = document.getElementById('r-plan'); if (p && s.querySelector('[value="' + p + '"]')) s.value = p; })();
+        </script>
+      </div>
+    </div>
+    <div class="auth-media" aria-hidden="false">
+      <picture><source type="image/webp" srcset="https://images.unsplash.com/photo-1778114008474-db8f9b9a4698?w=480&amp;h=560&amp;fit=crop&amp;crop=entropy&amp;fm=webp&amp;q=72 480w, https://images.unsplash.com/photo-1778114008474-db8f9b9a4698?w=800&amp;h=933&amp;fit=crop&amp;crop=entropy&amp;fm=webp&amp;q=72 800w, https://images.unsplash.com/photo-1778114008474-db8f9b9a4698?w=1200&amp;h=1400&amp;fit=crop&amp;crop=entropy&amp;fm=webp&amp;q=72 1200w" sizes="(min-width: 1024px) 50vw, 100vw"><img src="https://images.unsplash.com/photo-1778114008474-db8f9b9a4698?w=1200&amp;h=1400&amp;fit=crop&amp;crop=entropy&amp;fm=jpg&amp;q=72" srcset="https://images.unsplash.com/photo-1778114008474-db8f9b9a4698?w=480&amp;h=560&amp;fit=crop&amp;crop=entropy&amp;fm=jpg&amp;q=72 480w, https://images.unsplash.com/photo-1778114008474-db8f9b9a4698?w=800&amp;h=933&amp;fit=crop&amp;crop=entropy&amp;fm=jpg&amp;q=72 800w, https://images.unsplash.com/photo-1778114008474-db8f9b9a4698?w=1200&amp;h=1400&amp;fit=crop&amp;crop=entropy&amp;fm=jpg&amp;q=72 1200w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Brother and sister playing catch outdoors at sunset" width="1200" height="1400" loading="lazy" decoding="async" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.remove();this.removeAttribute('srcset');this.src='../assets/images/auth-register.jpg'"></picture>
+      <div class="overlay"><p class="h3 mb-2" style="color:#fff">Free inspection. No contract.</p><p class="mb-0" style="color:#e4f4e8">Cancel within 30 days for a full refund.</p></div>
+    </div>
+  </main>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

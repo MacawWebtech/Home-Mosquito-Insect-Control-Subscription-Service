@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: replace yardshield.example with your domain -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.yardshield.example/pages/index.html</loc><lastmod>2026-10-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.yardshield.example/pages/index-2.html</loc><lastmod>2026-10-06</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.yardshield.example/pages/services.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.yardshield.example/pages/service-details.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.yardshield.example/pages/pricing.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.yardshield.example/pages/about.html</loc><lastmod>2026-10-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.yardshield.example/pages/blog.html</loc><lastmod>2026-10-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.yardshield.example/pages/blog-details.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.yardshield.example/pages/contact.html</loc><lastmod>2026-10-06</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.yardshield.example/pages/coming-soon.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+</urlset>

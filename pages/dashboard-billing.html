@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Billing & Subscription | YardShield Portal</title>
+  <meta name="description" content="Manage your YardShield subscription: view your current plan and invoices, update your payment method, and upgrade, pause or cancel your plan at any time.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/pages/dashboard-billing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="Billing & Subscription | YardShield Portal">
+  <meta property="og:description" content="Manage your YardShield subscription: view your current plan and invoices, update your payment method, and upgrade, pause or cancel your plan at any time.">
+  <meta property="og:url" content="https://www.yardshield.example/pages/dashboard-billing.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body class="app-body">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app-shell">
+    <!-- Sidebar: inline on large screens, offcanvas below 992px -->
+    <aside class="app-sidebar offcanvas-lg offcanvas-start" id="appSidebar" tabindex="-1" aria-labelledby="sidebarLabel">
+      <div class="d-flex align-items-center justify-content-between">
+        <a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="Close menu"></button>
+      </div>
+      <nav aria-label="Customer portal navigation">
+        <p class="side-label" id="sidebarLabel">My yard</p>
+        <ul class="side-nav"><li><a href="dashboard.html"><i class="bi bi-speedometer2" aria-hidden="true"></i>Overview</a></li><li><a href="dashboard-schedule.html"><i class="bi bi-calendar3" aria-hidden="true"></i>Schedule visits</a></li><li><a href="dashboard-history.html"><i class="bi bi-clock-history" aria-hidden="true"></i>Service history</a></li><li><a href="dashboard-reports.html"><i class="bi bi-graph-up" aria-hidden="true"></i>Treatment reports</a></li><li><a href="dashboard-billing.html" aria-current="page"><i class="bi bi-credit-card" aria-hidden="true"></i>Billing &amp; subscription</a></li><li><a href="dashboard-profile.html"><i class="bi bi-house-gear" aria-hidden="true"></i>Profile &amp; property</a></li><li><a href="dashboard-messages.html"><i class="bi bi-chat-dots" aria-hidden="true"></i>Messages &amp; support</a></li></ul>
+        <p class="side-label">Switch</p>
+        <ul class="side-nav">
+          <li><a href="admin.html"><i class="bi bi-shield-lock" aria-hidden="true"></i>Admin dashboard</a></li>
+          <li><a href="index.html"><i class="bi bi-globe2" aria-hidden="true"></i>Back to website</a></li>
+          <li><a href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+        </ul>
+      </nav>
+      <div class="card p-3 mt-auto section-tint border-0">
+        <p class="small fw-bold mb-1"><i class="bi bi-patch-check-fill me-1" style="color:var(--ys-primary)" aria-hidden="true"></i>Guarantee active</p>
+        <p class="small text-muted mb-2">Pests back between visits? We re-treat free.</p>
+        <a href="dashboard-messages.html" class="btn btn-sm btn-primary">Request re-treatment</a>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <button class="icon-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#appSidebar" aria-controls="appSidebar" aria-label="Open navigation"><i class="bi bi-list" aria-hidden="true"></i></button>
+        <h1>Billing &amp; subscription</h1>
+        <div class="header-actions ms-auto">
+          <button type="button" class="btn btn-sm btn-ghost d-none d-md-inline-flex" data-dir-toggle aria-pressed="false" title="Switch text direction (preview Arabic/Hebrew layout)"><i class="bi bi-translate" aria-hidden="true"></i><span data-dir-label>RTL</span><span class="visually-hidden"> layout</span></button>
+          <button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button>
+          <div class="dropdown">
+            <button class="icon-btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications, 2 unread">
+              <i class="bi bi-bell" aria-hidden="true"></i><span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger rounded-circle" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="min-width:300px">
+              <li class="px-2 py-1 small fw-bold text-muted">Notifications</li>
+              <li><a class="dropdown-item" href="dashboard-schedule.html"><i class="bi bi-calendar-check" aria-hidden="true"></i>Visit confirmed for Thursday</a></li>
+              <li><a class="dropdown-item" href="dashboard-reports.html"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i>New report: 94% effectiveness</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-ghost px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="avatar avatar-initials" style="width:32px;height:32px;font-size:.8rem" aria-hidden="true">JR</span>
+              <span class="d-none d-md-inline">Jordan Rivera</span><i class="bi bi-chevron-down small d-none d-sm-inline" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="px-2 py-1"><strong class="d-block small">Jordan Rivera</strong><span class="small text-muted">Standard plan</span></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="dashboard-profile.html"><i class="bi bi-person" aria-hidden="true"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="dashboard-billing.html"><i class="bi bi-credit-card" aria-hidden="true"></i>Billing</a></li>
+              <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main id="main" class="app-content" tabindex="-1">
+
+        <div class="row g-3 g-lg-4">
+          <div class="col-xl-7">
+            <section class="card p-4" aria-labelledby="plan-title">
+              <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div><div class="skeleton skeleton-line w-75"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex flex-wrap justify-content-between gap-2 align-items-start">
+                <div><p class="kpi-label mb-1">Current plan</p><h2 id="plan-title" class="h3 mb-1">Standard <span id="planStatus" class="badge badge-soft align-middle">Active</span></h2>
+                <p class="text-muted mb-0">$79/month &middot; next charge Nov 1, 2026 &middot; visits every 21 days</p></div>
+                <span class="icon-circle"><i class="bi bi-shield-check" aria-hidden="true"></i></span></div>
+                <div class="my-4"><div class="d-flex justify-content-between small mb-1"><span>Season progress</span><span>9 of 12 visits</span></div>
+                <div class="progress" role="progressbar" aria-label="Season progress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:75%"></div></div></div>
+                <div class="d-flex flex-wrap gap-2">
+                  <button type="button" class="btn btn-accent" data-bs-toggle="modal" data-bs-target="#upgradeModal"><i class="bi bi-arrow-up-circle" aria-hidden="true"></i>Change plan</button>
+                  <button type="button" class="btn btn-ghost" data-bs-toggle="modal" data-bs-target="#pauseModal"><i class="bi bi-pause-circle" aria-hidden="true"></i>Pause</button>
+                  <button type="button" class="btn btn-ghost text-danger" data-bs-toggle="modal" data-bs-target="#cancelModal"><i class="bi bi-x-circle" aria-hidden="true"></i>Cancel subscription</button>
+                </div></div></div>
+            </section>
+          </div>
+          <div class="col-xl-5">
+            <section class="card p-4" aria-labelledby="pm-title">
+              <h2 id="pm-title" class="h5">Payment method</h2>
+              <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3"><i class="bi bi-credit-card-2-front fs-2" aria-hidden="true"></i><div><strong class="d-block">Visa ending in 4242</strong><span class="small text-muted">Expires 08/28</span></div><span class="badge badge-teal ms-auto">Default</span></div>
+                <!-- TODO: Stripe — open the Stripe Customer Portal or Stripe Elements here. PayPal — render PayPal Buttons into #paypal-button -->
+                <div class="d-flex flex-wrap gap-2"><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#cardModal"><i class="bi bi-pencil" aria-hidden="true"></i>Update card</button>
+                <button type="button" class="btn btn-ghost" id="paypal-button" onclick="YS.toast('Connect PayPal Buttons here (see docs).','info')"><i class="bi bi-paypal" aria-hidden="true"></i>Use PayPal</button></div></div></div>
+            </section>
+          </div>
+          <div class="col-12">
+            <section class="card p-4" aria-labelledby="inv-title">
+              <h2 id="inv-title" class="h5 mb-3">Invoices</h2>
+              <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div></div><div class="real-view"><div class="table-responsive"><table class="table table-hover table-stack mb-0"><caption class="visually-hidden">Invoice history</caption><thead><tr><th scope="col">Invoice</th><th scope="col">Date</th><th scope="col">Amount</th><th scope="col">Status</th><th scope="col"><span class="visually-hidden">Download</span></th></tr></thead><tbody><tr data-status="paid"><td data-label="Invoice" class="fw-semibold">INV-2026-1009</td><td data-label="Date">Oct 1, 2026</td><td data-label="Amount">$79.00</td><td data-label="Status"><span class="badge badge-soft">Paid</span></td><td data-label="Download"><a href="#" class="btn btn-sm btn-ghost" onclick="event.preventDefault();YS.toast('Downloading INV-2026-1009.pdf','info')" aria-label="Download invoice INV-2026-1009"><i class="bi bi-download" aria-hidden="true"></i>PDF</a></td></tr><tr data-status="paid"><td data-label="Invoice" class="fw-semibold">INV-2026-0912</td><td data-label="Date">Sep 1, 2026</td><td data-label="Amount">$79.00</td><td data-label="Status"><span class="badge badge-soft">Paid</span></td><td data-label="Download"><a href="#" class="btn btn-sm btn-ghost" onclick="event.preventDefault();YS.toast('Downloading INV-2026-0912.pdf','info')" aria-label="Download invoice INV-2026-0912"><i class="bi bi-download" aria-hidden="true"></i>PDF</a></td></tr><tr data-status="paid"><td data-label="Invoice" class="fw-semibold">INV-2026-0815</td><td data-label="Date">Aug 1, 2026</td><td data-label="Amount">$138.00</td><td data-label="Status"><span class="badge badge-soft">Paid</span></td><td data-label="Download"><a href="#" class="btn btn-sm btn-ghost" onclick="event.preventDefault();YS.toast('Downloading INV-2026-0815.pdf','info')" aria-label="Download invoice INV-2026-0815"><i class="bi bi-download" aria-hidden="true"></i>PDF</a></td></tr><tr data-status="paid"><td data-label="Invoice" class="fw-semibold">INV-2026-0718</td><td data-label="Date">Jul 1, 2026</td><td data-label="Amount">$79.00</td><td data-label="Status"><span class="badge badge-soft">Paid</span></td><td data-label="Download"><a href="#" class="btn btn-sm btn-ghost" onclick="event.preventDefault();YS.toast('Downloading INV-2026-0718.pdf','info')" aria-label="Download invoice INV-2026-0718"><i class="bi bi-download" aria-hidden="true"></i>PDF</a></td></tr><tr data-status="refunded"><td data-label="Invoice" class="fw-semibold">INV-2026-0621</td><td data-label="Date">Jun 1, 2026</td><td data-label="Amount">$79.00</td><td data-label="Status"><span class="badge badge-muted">Refunded</span></td><td data-label="Download"><a href="#" class="btn btn-sm btn-ghost" onclick="event.preventDefault();YS.toast('Downloading INV-2026-0621.pdf','info')" aria-label="Download invoice INV-2026-0621"><i class="bi bi-download" aria-hidden="true"></i>PDF</a></td></tr></tbody></table></div></div></div>
+            </section>
+          </div>
+        </div>
+        
+        <div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModal-t" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+            <div class="modal-header"><h2 class="modal-title h5" id="upgradeModal-t">Change your plan</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body"><fieldset><legend class="small text-muted mb-3">Choose a plan. Changes are prorated on your next invoice.</legend><label class="card p-3 mb-2 d-flex flex-row align-items-center gap-3" for="np-basic"><input class="form-check-input mt-0" type="radio" name="newplan" id="np-basic"  data-select-plan="Basic"><span class="flex-grow-1"><strong>Basic</strong><span class="d-block small text-muted">Monthly barrier treatment</span></span><strong>$49/mo</strong></label><label class="card p-3 mb-2 d-flex flex-row align-items-center gap-3" for="np-standard"><input class="form-check-input mt-0" type="radio" name="newplan" id="np-standard" checked data-select-plan="Standard"><span class="flex-grow-1"><strong>Standard</strong><span class="d-block small text-muted">Every 21 days + tick &amp; flea</span></span><strong>$79/mo</strong></label><label class="card p-3 mb-2 d-flex flex-row align-items-center gap-3" for="np-premium"><input class="form-check-input mt-0" type="radio" name="newplan" id="np-premium"  data-select-plan="Premium"><span class="flex-grow-1"><strong>Premium</strong><span class="d-block small text-muted">Everything + perimeter &amp; events</span></span><strong>$119/mo</strong></label></fieldset><p class="small mb-0">Selected: <strong id="newPlanName">Standard</strong></p></div>
+            <div class="modal-footer"><button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Keep my plan</button><button type="button" class="btn btn-accent" data-billing-action="upgrade">Confirm change</button></div>
+          </div></div>
+        </div>
+        
+        <div class="modal fade" id="pauseModal" tabindex="-1" aria-labelledby="pauseModal-t" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+            <div class="modal-header"><h2 class="modal-title h5" id="pauseModal-t">Pause your subscription</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body"><p>We&rsquo;ll stop visits and billing until the date you choose. Your guarantee resumes with your first visit back.</p><label for="pauseUntil" class="form-label">Resume on</label><select id="pauseUntil" class="form-select"><option>In 2 weeks</option><option>In 1 month</option><option>Next spring (March 1)</option></select></div>
+            <div class="modal-footer"><button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Keep my plan</button><button type="button" class="btn btn-secondary" data-billing-action="pause">Pause subscription</button></div>
+          </div></div>
+        </div>
+        
+        <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModal-t" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+            <div class="modal-header"><h2 class="modal-title h5" id="cancelModal-t">Cancel subscription?</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body"><p>You&rsquo;ll keep visits until the end of this billing period (Oct 31). Many customers pause for winter instead &mdash; no charge while paused.</p><label for="cancelReason" class="form-label">Mind telling us why? (optional)</label><select id="cancelReason" class="form-select"><option>Choose a reason</option><option>Too expensive</option><option>Moving home</option><option>Not seeing results</option><option>Other</option></select></div>
+            <div class="modal-footer"><button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Keep my plan</button><button type="button" class="btn btn-danger" data-billing-action="cancel">Cancel subscription</button></div>
+          </div></div>
+        </div>
+        
+        <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="cardModal-t" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+            <div class="modal-header"><h2 class="modal-title h5" id="cardModal-t">Update payment method</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+            <div class="modal-body"><div class="mb-3"><label for="cc-name" class="form-label">Name on card</label><input id="cc-name" class="form-control" autocomplete="cc-name" value="Jordan Rivera"></div><div class="p-3 rounded-3 border text-muted small" id="stripe-card-element"><i class="bi bi-lock me-1" aria-hidden="true"></i>Stripe card field mounts here (see documentation).</div></div>
+            <div class="modal-footer"><button type="button" class="btn btn-ghost" data-bs-dismiss="modal">Keep my plan</button><button type="button" class="btn btn-primary" data-billing-action="card">Save card</button></div>
+          </div></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

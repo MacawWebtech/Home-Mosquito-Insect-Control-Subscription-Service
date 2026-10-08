@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Analytics | YardShield Admin Dashboard</title>
+  <meta name="description" content="YardShield admin analytics: recurring revenue, active subscribers, churn, plan mix, sign-ups versus cancellations and top regions by treatment effectiveness.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/pages/admin.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="Admin Analytics | YardShield Admin Dashboard">
+  <meta property="og:description" content="YardShield admin analytics: recurring revenue, active subscribers, churn, plan mix, sign-ups versus cancellations and top regions by treatment effectiveness.">
+  <meta property="og:url" content="https://www.yardshield.example/pages/admin.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body class="app-body">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app-shell">
+    <!-- Sidebar: inline on large screens, offcanvas below 992px -->
+    <aside class="app-sidebar offcanvas-lg offcanvas-start" id="appSidebar" tabindex="-1" aria-labelledby="sidebarLabel">
+      <div class="d-flex align-items-center justify-content-between">
+        <a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="Close menu"></button>
+      </div>
+      <nav aria-label="Admin navigation">
+        <p class="side-label" id="sidebarLabel">Admin</p>
+        <ul class="side-nav"><li><a href="admin.html" aria-current="page"><i class="bi bi-bar-chart-line" aria-hidden="true"></i>Analytics</a></li><li><a href="admin-users.html"><i class="bi bi-people" aria-hidden="true"></i>Users</a></li><li><a href="admin-subscriptions.html"><i class="bi bi-receipt" aria-hidden="true"></i>Orders &amp; subscriptions</a></li><li><a href="admin-messages.html"><i class="bi bi-inbox" aria-hidden="true"></i>Messages</a></li></ul>
+        <p class="side-label">Switch</p>
+        <ul class="side-nav">
+          <li><a href="dashboard.html"><i class="bi bi-person" aria-hidden="true"></i>Customer portal</a></li>
+          <li><a href="index.html"><i class="bi bi-globe2" aria-hidden="true"></i>Back to website</a></li>
+          <li><a href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+        </ul>
+      </nav>
+      
+    </aside>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <button class="icon-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#appSidebar" aria-controls="appSidebar" aria-label="Open navigation"><i class="bi bi-list" aria-hidden="true"></i></button>
+        <h1>Analytics</h1>
+        <div class="header-actions ms-auto">
+          <button type="button" class="btn btn-sm btn-ghost d-none d-md-inline-flex" data-dir-toggle aria-pressed="false" title="Switch text direction (preview Arabic/Hebrew layout)"><i class="bi bi-translate" aria-hidden="true"></i><span data-dir-label>RTL</span><span class="visually-hidden"> layout</span></button>
+          <button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button>
+          <div class="dropdown">
+            <button class="icon-btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications, 2 unread">
+              <i class="bi bi-bell" aria-hidden="true"></i><span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger rounded-circle" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="min-width:300px">
+              <li class="px-2 py-1 small fw-bold text-muted">Notifications</li>
+              <li><a class="dropdown-item" href="admin-messages.html"><i class="bi bi-calendar-check" aria-hidden="true"></i>3 new support tickets</a></li>
+              <li><a class="dropdown-item" href="admin-subscriptions.html"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i>12 renewals due this week</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-ghost px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="avatar avatar-initials" style="width:32px;height:32px;font-size:.8rem" aria-hidden="true">AK</span>
+              <span class="d-none d-md-inline">Alex Kim</span><i class="bi bi-chevron-down small d-none d-sm-inline" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="px-2 py-1"><strong class="d-block small">Alex Kim</strong><span class="small text-muted">Admin</span></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="admin-users.html"><i class="bi bi-person" aria-hidden="true"></i>Users</a></li>
+              <li><a class="dropdown-item" href="admin-subscriptions.html"><i class="bi bi-credit-card" aria-hidden="true"></i>Billing</a></li>
+              <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main id="main" class="app-content" tabindex="-1">
+
+        <div class="row g-3 g-lg-4 mb-4">
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">Monthly recurring revenue</span><span class="icon-circle sm "><i class="bi bi-currency-dollar" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">$191k</div><div class="small text-muted d-flex gap-2 align-items-center"><span class="kpi-trend down small fw-bold"><i class="bi bi-arrow-down-right" aria-hidden="true"></i>&minus;7%</span>vs. last month</div></div></div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">Active subscribers</span><span class="icon-circle sm teal"><i class="bi bi-people" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">48,212</div><div class="small text-muted d-flex gap-2 align-items-center"><span class="kpi-trend up small fw-bold"><i class="bi bi-arrow-up-right" aria-hidden="true"></i>+2.1%</span>all plans</div></div></div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">Monthly churn</span><span class="icon-circle sm amber"><i class="bi bi-person-dash" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">1.3%</div><div class="small text-muted d-flex gap-2 align-items-center">seasonal low is 0.9%</div></div></div></div></div>
+          <div class="col-sm-6 col-xl-3"><div class="card kpi-card p-3 p-md-4"><div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line w-50"></div><div class="skeleton skeleton-line lg"></div><div class="skeleton skeleton-line w-75"></div></div><div class="real-view"><div class="d-flex justify-content-between align-items-start mb-2"><span class="kpi-label">Avg. effectiveness</span><span class="icon-circle sm "><i class="bi bi-bullseye" aria-hidden="true"></i></span></div>
+              <div class="kpi-value">94%</div><div class="small text-muted d-flex gap-2 align-items-center"><span class="kpi-trend up small fw-bold"><i class="bi bi-arrow-up-right" aria-hidden="true"></i>+1%</span>last 30 days</div></div></div></div></div>
+        </div>
+        <div class="row g-3 g-lg-4">
+          <div class="col-xl-8"><section class="card p-4" aria-labelledby="a1"><h2 id="a1" class="h5 mb-3">Recurring revenue (12 months)</h2>
+            <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-block"></div></div><div class="real-view"><div class="chart-box"><canvas data-chart="admin-mrr" role="img" aria-label="Line chart of monthly recurring revenue peaking at 216 thousand dollars in August"></canvas></div></div></div></section></div>
+          <div class="col-xl-4"><section class="card p-4" aria-labelledby="a2"><h2 id="a2" class="h5 mb-3">Plan mix</h2>
+            <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-block"></div></div><div class="real-view"><div class="chart-box"><canvas data-chart="admin-plans" role="img" aria-label="Doughnut chart: Standard 48 percent, Basic 34, Premium 18"></canvas></div></div></div></section></div>
+          <div class="col-xl-7"><section class="card p-4" aria-labelledby="a3"><h2 id="a3" class="h5 mb-3">Sign-ups vs. cancellations</h2>
+            <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-block"></div></div><div class="real-view"><div class="chart-box"><canvas data-chart="admin-signups" role="img" aria-label="Bar chart of new subscriptions peaking in May and June, with cancellations rising in fall"></canvas></div></div></div></section></div>
+          <div class="col-xl-5"><section class="card p-4" aria-labelledby="a4"><h2 id="a4" class="h5 mb-3">Top regions</h2>
+            <div data-skeleton><div class="skeleton-view" aria-hidden="true"><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line"></div></div><div class="real-view"><div class="table-responsive"><table class="table table-stack mb-0"><caption class="visually-hidden">Top regions by subscribers</caption><thead><tr><th scope="col">Region</th><th scope="col">Subscribers</th><th scope="col">Effectiveness</th><th scope="col">Growth</th></tr></thead><tbody><tr><td data-label="Region" class="fw-semibold">Atlanta, GA</td><td data-label="Subscribers">12,480</td><td data-label="Effectiveness">96%</td><td data-label="Growth"><span class="kpi-trend up fw-bold">+8%</span></td></tr><tr><td data-label="Region" class="fw-semibold">Houston, TX</td><td data-label="Subscribers">9,912</td><td data-label="Effectiveness">93%</td><td data-label="Growth"><span class="kpi-trend up fw-bold">+12%</span></td></tr><tr><td data-label="Region" class="fw-semibold">Charlotte, NC</td><td data-label="Subscribers">8,204</td><td data-label="Effectiveness">95%</td><td data-label="Growth"><span class="kpi-trend up fw-bold">+5%</span></td></tr><tr><td data-label="Region" class="fw-semibold">Dallas, TX</td><td data-label="Subscribers">7,630</td><td data-label="Effectiveness">92%</td><td data-label="Growth"><span class="kpi-trend up fw-bold">+9%</span></td></tr><tr><td data-label="Region" class="fw-semibold">Tampa, FL</td><td data-label="Subscribers">5,410</td><td data-label="Effectiveness">94%</td><td data-label="Growth"><span class="kpi-trend up fw-bold">+15%</span></td></tr></tbody></table></div></div></div></section></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/vendor/chartjs/chart.umd.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>

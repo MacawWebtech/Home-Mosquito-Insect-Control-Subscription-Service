@@ -1,0 +1,100 @@
+/* ==========================================================================
+   YardShield — Dark mode
+   Applied when <html data-bs-theme="dark">. main.js sets this attribute from
+   the saved preference, falling back to the OS setting (prefers-color-scheme).
+   Only tokens are overridden here; components inherit them from style.css.
+   ========================================================================== */
+[data-bs-theme="dark"] {
+  --ys-primary: #3fb96a;
+  --ys-primary-strong: #5fd389;
+  --ys-primary-soft: rgba(63, 185, 106, .14);
+  --ys-secondary: #7fd18b;
+  --ys-secondary-soft: rgba(163, 217, 74, .14);
+  --ys-lime: #a3d94a;
+  --ys-accent: #ffc247;
+  --ys-accent-strong: #ffb11a;
+  --ys-accent-ink: #0f1513;
+
+  --ys-bg: #0f1513;
+  --ys-surface: #151c19;
+  --ys-surface-2: #1d2622;
+  --ys-border: #2b3631;
+  --ys-text: #e8efe9;
+  --ys-text-muted: #9aa7a0;
+  --ys-danger: #ff8a80;
+  --ys-warning: #ffc247;
+  --ys-info: #ffc247;
+
+  --ys-banner-overlay:
+    radial-gradient(70% 140% at 100% 0%, rgba(255, 194, 71, .10), transparent 60%),
+    linear-gradient(180deg, rgba(5, 14, 9, .92) 0%, rgba(8, 24, 15, .84) 100%);
+  --ys-shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --ys-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+  --ys-shadow-lg: 0 24px 48px rgba(0, 0, 0, .55);
+  --ys-focus: 0 0 0 3px var(--ys-bg), 0 0 0 6px var(--ys-secondary);
+
+  --bs-body-bg: var(--ys-bg);
+  --bs-body-color: var(--ys-text);
+  --bs-border-color: var(--ys-border);
+  --bs-primary-rgb: 63, 185, 106;
+  --bs-link-color: var(--ys-primary-strong);
+  --bs-link-color-rgb: 95, 211, 137;
+  --bs-secondary-rgb: 127, 209, 139;
+
+  /* Bootstrap blue/cyan defaults -> green / amber */
+  --bs-blue: #3fb96a; --bs-indigo: #5fd389; --bs-cyan: #ffc247; --bs-teal: #a3d94a;
+  --bs-info: #ffc247; --bs-info-rgb: 255, 194, 71;
+  --bs-info-text-emphasis: #ffd27a; --bs-info-bg-subtle: #2e2308; --bs-info-border-subtle: #6b4e0c;
+  --bs-primary-text-emphasis: #8fe0a8; --bs-primary-bg-subtle: #0f2a1a; --bs-primary-border-subtle: #1e5a33;
+  --bs-focus-ring-color: rgba(63, 185, 106, .35);
+  --bs-link-hover-color: var(--ys-secondary);
+  --bs-secondary-color: var(--ys-text-muted);
+  --bs-tertiary-bg: var(--ys-surface-2);
+  color-scheme: dark;
+}
+
+/* Buttons whose text sits on bright fills need dark ink in dark mode */
+[data-bs-theme="dark"] .btn-primary { --bs-btn-color: #0f1513; --bs-btn-hover-color: #0f1513; --bs-btn-active-color: #0f1513; --bs-btn-disabled-color: #0f1513; }
+[data-bs-theme="dark"] .btn-secondary { --bs-btn-color: #0f1513; --bs-btn-bg: var(--ys-secondary); --bs-btn-border-color: var(--ys-secondary);
+  --bs-btn-hover-color: #0f1513; --bs-btn-hover-bg: #a6e3ae; --bs-btn-hover-border-color: #a6e3ae; --bs-btn-active-color: #0f1513; --bs-btn-active-bg: #a6e3ae; }
+[data-bs-theme="dark"] .btn-outline-primary { --bs-btn-hover-color: #0f1513; --bs-btn-active-color: #0f1513; }
+[data-bs-theme="dark"] .bubble.me { color: #0f1513; }
+[data-bs-theme="dark"] .filter-chips button[aria-pressed="true"],
+[data-bs-theme="dark"] .season-tabs .nav-link.active,
+[data-bs-theme="dark"] .billing-toggle button[aria-pressed="true"],
+[data-bs-theme="dark"] .ys-cal-day[aria-pressed="true"] { color: #0f1513; }
+
+/* Brand surfaces that stay dark in both themes */
+[data-bs-theme="dark"] .trust-strip { background: #0f2d1b; }
+[data-bs-theme="dark"] .guarantee-block { background: linear-gradient(135deg, #14432a, #0b2a19); }
+[data-bs-theme="dark"] .cta-banner { background: radial-gradient(80% 120% at 100% 0%, rgba(255, 194, 71, .22), transparent 60%), #14532d; }
+[data-bs-theme="dark"] .site-footer { background: #0a1210; }
+[data-bs-theme="dark"] .page-header:not(.has-banner) { background: linear-gradient(180deg, #13201b, var(--ys-bg)); }
+
+[data-bs-theme="dark"] .icon-circle.amber,
+[data-bs-theme="dark"] .badge-amber { background: rgba(255, 194, 71, .14); color: #ffd27a; }
+[data-bs-theme="dark"] .badge-danger { background: rgba(255, 138, 128, .14); color: #ffa79f; }
+[data-bs-theme="dark"] .stars { color: #ffc247; }
+[data-bs-theme="dark"] .skeleton::after { background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .06), transparent); }
+[data-bs-theme="dark"] .zip-result.is-no { color: #ffc247; }
+
+/* Soften illustrations so bright placeholders don't glare at night */
+[data-bs-theme="dark"] img:not(.no-dim) { filter: brightness(.88) contrast(1.05); }
+
+/* Smooth swap (disabled for reduced motion via style.css) */
+html.theme-transition, html.theme-transition * { transition: background-color .25s ease, color .25s ease, border-color .25s ease !important; }
+
+/* No-blue: dark-theme replacements for Bootstrap's blue defaults */
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus,
+[data-bs-theme="dark"] .form-check-input:focus { box-shadow: 0 0 0 3px rgba(127, 209, 139, .35); }
+[data-bs-theme="dark"] .accordion-button::after {
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%239aa7a0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238fe0a8'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+[data-bs-theme="dark"] .form-switch .form-check-input:focus {
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%233fb96a'/%3e%3c/svg%3e");
+}
+[data-bs-theme="dark"] .page-link { --bs-pagination-focus-box-shadow: 0 0 0 3px rgba(127, 209, 139, .35); }
+[data-bs-theme="dark"] .btn-close:focus { box-shadow: 0 0 0 3px rgba(127, 209, 139, .35); }
+[data-bs-theme="dark"] ::selection { background: rgba(255, 194, 71, .35); }

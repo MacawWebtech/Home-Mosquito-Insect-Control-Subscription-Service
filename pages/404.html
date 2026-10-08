@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | YardShield</title>
+  <meta name="description" content="Sorry, this YardShield page could not be found. Head back to the home page, explore our yard pest control services and pricing, or contact our support team.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/pages/404.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="Page Not Found | YardShield">
+  <meta property="og:description" content="Sorry, this YardShield page could not be found. Head back to the home page, explore our yard pest control services and pricing, or contact our support team.">
+  <meta property="og:url" content="https://www.yardshield.example/pages/404.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <main id="main" class="utility-page" tabindex="-1">
+    <div style="max-width:720px">
+      <div class="mb-4"><a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a></div>
+      <p class="error-code mb-0" aria-hidden="true">404</p>
+      <h1 class="h2">This page flew away</h1>
+      <p class="lead mx-auto" style="max-width:520px">We couldn&rsquo;t find the page you were looking for. It may have moved, or the link might be mistyped.</p>
+      <div class="d-flex flex-wrap gap-2 justify-content-center my-4">
+        <a href="index.html" class="btn btn-primary btn-lg"><i class="bi bi-house" aria-hidden="true"></i>Back to home</a>
+        <a href="contact.html" class="btn btn-ghost btn-lg">Contact support</a>
+      </div>
+      <form action="blog.html" role="search" class="mx-auto" style="max-width:420px" aria-label="Search the blog">
+        <label for="nf-q" class="form-label small text-muted">Or search our articles</label>
+        <div class="input-group"><input id="nf-q" name="q" type="search" class="form-control" placeholder="e.g. ticks"><button class="btn btn-secondary" type="submit" aria-label="Search"><i class="bi bi-search" aria-hidden="true"></i></button></div>
+      </form>
+      <p class="small mt-4"><a href="services.html">Services</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="login.html">Customer login</a></p>
+    </div>
+  </main>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

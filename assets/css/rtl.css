@@ -1,0 +1,49 @@
+/* ==========================================================================
+   YardShield — RTL support (Arabic, Hebrew, Persian, Urdu)
+   --------------------------------------------------------------------------
+   How it works
+   - style.css is written with logical properties (margin-inline, inset-inline,
+     padding-inline), so most layout mirrors automatically.
+   - When <html dir="rtl">, main.js swaps Bootstrap to bootstrap.rtl.min.css
+     and this file handles what logical properties can't: icon direction,
+     transforms, and script-appropriate fonts.
+   - To ship an RTL-only site, set <html lang="ar" dir="rtl"> and link
+     bootstrap.rtl.min.css directly (see documentation).
+   ========================================================================== */
+
+[dir="rtl"] {
+  /* Bricolage/Figtree have no Arabic or Hebrew glyphs; fall back to system
+     fonts that do, keeping the two-font limit for Latin text.
+     TODO: swap in a self-hosted Arabic/Hebrew face if your brand needs one. */
+  --ys-font-heading: "Bricolage Grotesque", "Segoe UI", Tahoma, "Noto Sans Arabic", "Noto Sans Hebrew", sans-serif;
+  --ys-font-body: "Figtree", "Segoe UI", Tahoma, "Noto Sans Arabic", "Noto Sans Hebrew", sans-serif;
+}
+[dir="rtl"] body { letter-spacing: 0; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 { letter-spacing: 0; }
+
+/* Directional icons point the other way */
+[dir="rtl"] .bi-arrow-right, [dir="rtl"] .bi-arrow-left,
+[dir="rtl"] .bi-chevron-right, [dir="rtl"] .bi-chevron-left,
+[dir="rtl"] .bi-arrow-right-short, [dir="rtl"] .bi-box-arrow-right,
+[dir="rtl"] .bi-send { display: inline-block; transform: scaleX(-1); }
+
+/* Hover nudges move toward the reading direction */
+[dir="rtl"] .service-card:hover .link-arrow i { transform: scaleX(-1) translateX(3px); }
+
+/* Breadcrumb divider */
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before { float: right; padding-left: var(--bs-breadcrumb-item-padding-x); padding-right: 0; }
+
+/* Accordion chevron sits on the left */
+[dir="rtl"] .accordion-button::after { margin-left: 0; margin-right: auto; }
+
+/* Chat bubbles align to the opposite side */
+[dir="rtl"] .bubble.me { align-self: flex-start; }
+[dir="rtl"] .bubble:not(.me) { align-self: flex-end; }
+
+/* Tables: numbers stay left-aligned in stacked mobile view */
+@media (max-width: 639.98px) {
+  [dir="rtl"] .table-stack td { text-align: start; }
+}
+
+/* Footer link list spacing */
+[dir="rtl"] .tag-cloud a { margin: 0 0 8px 4px; }

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | YardShield Mosquito & Insect Control</title>
+  <meta name="description" content="Meet YardShield: licensed technicians, an entomologist-approved product list and a mission to give families their yards back without harming pollinators.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/pages/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="About Us | YardShield Mosquito & Insect Control">
+  <meta property="og:description" content="Meet YardShield: licensed technicians, an entomologist-approved product list and a mission to give families their yards back without harming pollinators.">
+  <meta property="og:url" content="https://www.yardshield.example/pages/about.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ======================= Header ======================= -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">
+          <i class="bi bi-list fs-3" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="index.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house" aria-hidden="true"></i>Home 1 &mdash; Classic</a></li>
+              <li><a class="dropdown-item" href="index-2.html"><i class="bi bi-image" aria-hidden="true"></i>Home 2 &mdash; Photo-led</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="services.html"><i class="bi bi-grid" aria-hidden="true"></i>All services</a></li>
+              <li><a class="dropdown-item" href="service-details.html"><i class="bi bi-shield-check" aria-hidden="true"></i>Mosquito barrier treatment</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="pricing.html"><i class="bi bi-tags" aria-hidden="true"></i>Plans &amp; pricing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="header-actions">
+            <button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button>
+            <button type="button" class="icon-btn dir-btn" data-dir-toggle aria-pressed="false" title="Switch text direction (preview Arabic/Hebrew layout)"><i class="bi bi-translate" aria-hidden="true"></i><span data-dir-label>RTL</span><span class="visually-hidden"> layout</span></button>
+            <a class="btn btn-ghost" href="login.html"><i class="bi bi-person-circle" aria-hidden="true"></i>Log in</a>
+            <a class="btn btn-accent" href="pricing.html">View Plans</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="page-header has-banner bg-about">
+      <div class="container">
+        <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active" aria-current="page">About</li></ol></nav>
+        <h1>About YardShield</h1>
+        <p class="lead mb-0">We started YardShield so families could stop planning summer around mosquitoes.</p>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="story-title">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-lg-stretch">
+          <div class="col-lg-6"><div class="media-frame media-fill"><picture><source type="image/webp" srcset="" sizes="(min-width: 1024px) 50vw, 100vw"><img src="../assets/images/pest control.jpg" srcset=" " sizes="(min-width: 1024px) 50vw, 100vw" alt="YardShield technician holding a spray gun, ready to treat a yard" width="1200" height="750" loading="lazy" decoding="async" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.remove();this.removeAttribute('srcset');this.src='../assets/images/about-story.jpg'"></picture></div></div>
+          <div class="col-lg-6">
+            <span class="eyebrow">Our story</span>
+            <h2 id="story-title">Pest control that runs itself</h2>
+            <p>In 2016 our founder, Elena, was calling a different exterminator every few weeks and still couldn&rsquo;t sit on her own porch at dusk. The problem wasn&rsquo;t the spray &mdash; it was the schedule. Mosquito treatments only work if they&rsquo;re repeated before the last one wears off.</p>
+            <p>So we built a subscription around that rhythm: one inspection, a season of automatic visits, and a dashboard that shows you every treatment. Today we protect more than 48,000 yards across six metro areas.</p>
+            <div class="row g-3 mt-2"><div class="col-6"><div class="stat-number">48,000+</div><div class="small text-muted">yards protected</div></div><div class="col-6"><div class="stat-number">140</div><div class="small text-muted">licensed technicians</div></div><div class="col-6"><div class="stat-number">4.9/5</div><div class="small text-muted">average rating</div></div><div class="col-6"><div class="stat-number">92%</div><div class="small text-muted">renew every year</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="mission-title">
+      <div class="container">
+        <div class="row g-4 g-lg-5 align-items-center flex-lg-row-reverse">
+          <div class="col-lg-6"><div class="media-frame"><picture><source type="image/webp" srcset=" " sizes="(min-width: 1024px) 50vw, 100vw"><img src="../assets/images/bees.jpg" srcset="" sizes="(min-width: 1024px) 50vw, 100vw" alt="Honeybee resting on a purple flower" width="1200" height="750" loading="lazy" decoding="async" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.remove();this.removeAttribute('srcset');this.src='../assets/images/about-mission.jpg'"></picture></div></div>
+          <div class="col-lg-6">
+            <span class="eyebrow">Our mission</span>
+            <h2 id="mission-title">Fewer bites, not fewer bees</h2>
+            <p class="text-muted">We target the pests that bother you and leave pollinators alone. That means no blanket spraying on flowers, treatments timed away from bloom, and technicians trained to spot what not to treat.</p>
+            <ul class="check-list">
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Pollinator-aware application on every visit</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Lowest effective dose, never more</li>
+              <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Plant-based options on request</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Team</span><h2 id="team-title">The people behind your yard</h2></div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <article class="card card-hover h-100 overflow-hidden text-center">
+              <picture><source type="image/webp" srcset="" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"><img src="../assets/images/team1.jpg" srcset="" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt="Portrait of Elena Morales, founder and CEO" width="480" height="480" loading="lazy" decoding="async" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.remove();this.removeAttribute('srcset');this.src='../assets/images/team-1.jpg'" class="card-img-top team-photo"></picture>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Elena Morales</h3>
+                <p class="small fw-bold text-uppercase mb-2" style="color:var(--ys-primary-strong)">Founder &amp; CEO</p>
+                <p class="small text-muted mb-0">Former entomology researcher who got tired of losing summers to mosquitoes.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="card card-hover h-100 overflow-hidden text-center">
+              <picture><source type="image/webp" srcset="" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"><img src="../assets/images/team2.jpg" srcset="" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt="Portrait of James Alvarez, head of field operations" width="480" height="480" loading="lazy" decoding="async" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.remove();this.removeAttribute('srcset');this.src='../assets/images/team-2.jpg'" class="card-img-top team-photo"></picture>
+              <div class="card-body">
+                <h3 class="h5 mb-1">James Alvarez</h3>
+                <p class="small fw-bold text-uppercase mb-2" style="color:var(--ys-primary-strong)">Head of Field Operations</p>
+                <p class="small text-muted mb-0">Leads 140 licensed technicians across six metro areas.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="card card-hover h-100 overflow-hidden text-center">
+              <picture><source type="image/webp" srcset="" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"><img src="../assets/images/team3.jpg" srcset=" " sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt="Portrait of Dr. Aisha Bello, safety and compliance lead" width="480" height="480" loading="lazy" decoding="async" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.remove();this.removeAttribute('srcset');this.src='../assets/images/team-3.jpg'" class="card-img-top team-photo"></picture>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Dr. Aisha Bello</h3>
+                <p class="small fw-bold text-uppercase mb-2" style="color:var(--ys-primary-strong)">Safety &amp; Compliance</p>
+                <p class="small text-muted mb-0">Board-certified entomologist; approves every product we use.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="card card-hover h-100 overflow-hidden text-center">
+              <picture><source type="image/webp" srcset="" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"><img src="../assets/images/team4.jpg" srcset="" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" alt="Portrait of Ryan Choi, customer experience lead" width="480" height="480" loading="lazy" decoding="async" onerror="this.onerror=null;var s=this.parentNode.querySelector('source');if(s)s.remove();this.removeAttribute('srcset');this.src='../assets/images/team-4.jpg'" class="card-img-top team-photo"></picture>
+              <div class="card-body">
+                <h3 class="h5 mb-1">Ryan Choi</h3>
+                <p class="small fw-bold text-uppercase mb-2" style="color:var(--ys-primary-strong)">Customer Experience</p>
+                <p class="small text-muted mb-0">Built the dashboard so you never have to call to reschedule.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" aria-labelledby="cert-title">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Certifications</span><h2 id="cert-title">Licensed, insured and accountable</h2></div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3"><div class="card p-4 h-100"><span class="icon-circle teal mb-3"><i class="bi bi-award" aria-hidden="true"></i></span><h3 class="h6 mb-1">State pest control licenses</h3><p class="small text-muted mb-0">GA, NC, TX, AZ, FL</p></div></div>
+          <div class="col-6 col-lg-3"><div class="card p-4 h-100"><span class="icon-circle teal mb-3"><i class="bi bi-shield-lock" aria-hidden="true"></i></span><h3 class="h6 mb-1">EPA-registered products</h3><p class="small text-muted mb-0">Applied at label rates</p></div></div>
+          <div class="col-6 col-lg-3"><div class="card p-4 h-100"><span class="icon-circle teal mb-3"><i class="bi bi-patch-check" aria-hidden="true"></i></span><h3 class="h6 mb-1">QualityPro certified</h3><p class="small text-muted mb-0">NPMA standard</p></div></div>
+          <div class="col-6 col-lg-3"><div class="card p-4 h-100"><span class="icon-circle teal mb-3"><i class="bi bi-people" aria-hidden="true"></i></span><h3 class="h6 mb-1">Background-checked</h3><p class="small text-muted mb-0">Every technician</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="about-reviews">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Testimonials</span><h2 id="about-reviews">What customers say</h2></div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <figure class="card testimonial p-4 mb-0">
+              <span class="stars" aria-label="Rated 5 out of 5"><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i></span>
+              <blockquote class="mt-3"><p class="mb-0">&ldquo;We used to give up on the backyard by July. Now the kids are out there every evening and I genuinely forget YardShield is a thing &mdash; they just show up.&rdquo;</p></blockquote>
+              <figcaption class="d-flex align-items-center gap-3 mt-auto">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&amp;h=96&amp;fit=crop&amp;crop=faces&amp;fm=jpg&amp;q=72" alt="Photo of Danielle R." width="48" height="48" class="avatar" loading="lazy">
+                <span><strong class="d-block">Danielle R.</strong><span class="small text-muted">Atlanta, GA &middot; Standard plan</span></span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <figure class="card testimonial p-4 mb-0">
+              <span class="stars" aria-label="Rated 5 out of 5"><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i></span>
+              <blockquote class="mt-3"><p class="mb-0">&ldquo;Our dog had ticks constantly. Since the tick &amp; flea add-on we have found exactly one, and they came back for a free re-treatment two days later.&rdquo;</p></blockquote>
+              <figcaption class="d-flex align-items-center gap-3 mt-auto">
+                <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=96&amp;h=96&amp;fit=crop&amp;crop=faces&amp;fm=jpg&amp;q=72" alt="Photo of Marcus T." width="48" height="48" class="avatar" loading="lazy">
+                <span><strong class="d-block">Marcus T.</strong><span class="small text-muted">Charlotte, NC &middot; Premium plan</span></span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-md-6 col-lg-4 mx-md-auto mx-lg-0">
+            <figure class="card testimonial p-4 mb-0">
+              <span class="stars" aria-label="Rated 5 out of 5"><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i><i class="bi bi-star-fill" aria-hidden="true"></i></span>
+              <blockquote class="mt-3"><p class="mb-0">&ldquo;The dashboard is what sold me. I can see what was sprayed, where, and when the next visit is. Rescheduling around our barbecue took ten seconds.&rdquo;</p></blockquote>
+              <figcaption class="d-flex align-items-center gap-3 mt-auto">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=96&amp;h=96&amp;fit=crop&amp;crop=faces&amp;fm=jpg&amp;q=72" alt="Photo of Priya S." width="48" height="48" class="avatar" loading="lazy">
+                <span><strong class="d-block">Priya S.</strong><span class="small text-muted">Houston, TX &middot; Standard plan</span></span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="cta-banner text-center text-md-start d-md-flex align-items-center justify-content-between gap-4">
+          <div>
+            <h2 class="mb-2">Join 48,000 happy yards</h2>
+            <p class="mb-md-0">Start with a free inspection. If it&rsquo;s not for you, cancel within 30 days for a full refund.</p>
+          </div>
+          <div class="d-flex flex-wrap gap-2 justify-content-center flex-shrink-0">
+            <a href="pricing.html" class="btn btn-accent btn-lg">View Plans</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Talk to us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= Footer ======================= -->
+  <footer class="site-footer" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="visually-hidden">Site footer</h2>
+    <div class="container">
+      <div class="row g-4 g-xl-5">
+        <div class="col-lg-3 col-xl-4">
+          <a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a>
+          <p class="mt-3 mb-4">Mosquito and insect control on a subscription. We treat your yard on schedule, you enjoy it &mdash; guaranteed.</p>
+          <ul class="social list-unstyled d-flex gap-2 mb-0">
+            <!-- TODO: add your social profile URLs -->
+            <li><a href="https://www.facebook.com/" aria-label="YardShield on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/" aria-label="YardShield on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.youtube.com/" aria-label="YardShield on YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/" aria-label="YardShield on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2>Company</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="coming-soon.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3 col-xl-2">
+          <h2>Services</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a href="service-details.html">Mosquito barrier</a></li>
+            <li><a href="services.html#tick-flea">Tick &amp; flea</a></li>
+            <li><a href="services.html#perimeter">Perimeter defense</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h2>Seasonal tips, monthly</h2>
+          <p class="small">One short email a month: what's biting, and what we're treating.</p>
+          <!-- TODO: Mailchimp/ConvertKit — set action to your form endpoint -->
+          <form class="needs-validation" novalidate data-toast="Thanks! Check your inbox to confirm." aria-label="Newsletter signup">
+            <div class="d-flex gap-2">
+              <div class="flex-grow-1">
+                <label for="newsletter-email" class="visually-hidden">Email address</label>
+                <input id="newsletter-email" name="email" type="email" class="form-control" placeholder="you@example.com" autocomplete="email" required>
+                <div class="invalid-feedback"></div>
+              </div>
+              <button class="btn btn-accent" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <p class="small mt-3 mb-0"><i class="bi bi-telephone me-1" aria-hidden="true"></i><a href="tel:+18005550199">(800) 555-0199</a> &middot; Mon&ndash;Sat, 7am&ndash;7pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-lg-row gap-3 justify-content-between align-items-lg-center">
+        <p class="mb-0">&copy; <span data-year>2026</span> YardShield, Inc. Licensed &amp; insured pest control.</p>
+        <div class="d-flex flex-wrap align-items-center gap-3">
+          <a href="../documentation/index.html">Documentation</a>
+          <a href="../sitemap.xml">Sitemap</a>
+          <button type="button" class="btn btn-sm btn-outline-light " data-dir-toggle aria-pressed="false" title="Switch text direction (preview Arabic/Hebrew layout)"><i class="bi bi-translate" aria-hidden="true"></i><span data-dir-label>RTL</span><span class="visually-hidden"> layout</span></button>
+          <button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile & Property | YardShield Customer Portal</title>
+  <meta name="description" content="Update your contact details, service address, yard size and features, pet and child safety notes, and gate access instructions for your YardShield technician.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1e7b3c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1513" media="(prefers-color-scheme: dark)">
+  <!-- TODO: replace yardshield.example with your domain -->
+  <link rel="canonical" href="https://www.yardshield.example/pages/dashboard-profile.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YardShield">
+  <meta property="og:title" content="Profile & Property | YardShield Customer Portal">
+  <meta property="og:description" content="Update your contact details, service address, yard size and features, pet and child safety notes, and gate access instructions for your YardShield technician.">
+  <meta property="og:url" content="https://www.yardshield.example/pages/dashboard-profile.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1784828985296-64d1d85c1454?w=1200&h=900&fit=crop&crop=entropy&fm=jpg&q=72">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Theme + direction before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ys-theme');
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', t);
+        if (localStorage.getItem('ys-dir') === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts: Bricolage Grotesque (headings) + Figtree (body) -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400;500;600;700&display=swap">
+
+  <!-- Bootstrap 5.3.3 (RTL build is swapped in automatically when dir="rtl") -->
+  <link id="bootstrap-css" rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+  <script>
+    if (document.documentElement.getAttribute('dir') === 'rtl') document.getElementById('bootstrap-css').href = '../assets/vendor/bootstrap/css/bootstrap.rtl.min.css';
+  </script>
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+
+  <!-- Template styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body class="app-body">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app-shell">
+    <!-- Sidebar: inline on large screens, offcanvas below 992px -->
+    <aside class="app-sidebar offcanvas-lg offcanvas-start" id="appSidebar" tabindex="-1" aria-labelledby="sidebarLabel">
+      <div class="d-flex align-items-center justify-content-between">
+        <a class="navbar-brand " href="index.html" aria-label="YardShield home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M20 2 L35 8 V19 C35 29 28 35 20 38 C12 35 5 29 5 19 V8 Z" fill="var(--ys-primary)"/>
+            <path d="M12 24 C16 15 24 13 29 12 C27 19 22 25 13 26 Z" fill="#fff"/>
+            <path d="M12 26 L20 18" stroke="var(--ys-primary)" stroke-width="2" stroke-linecap="round"/>
+          </svg><span>YardShield</span></a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="Close menu"></button>
+      </div>
+      <nav aria-label="Customer portal navigation">
+        <p class="side-label" id="sidebarLabel">My yard</p>
+        <ul class="side-nav"><li><a href="dashboard.html"><i class="bi bi-speedometer2" aria-hidden="true"></i>Overview</a></li><li><a href="dashboard-schedule.html"><i class="bi bi-calendar3" aria-hidden="true"></i>Schedule visits</a></li><li><a href="dashboard-history.html"><i class="bi bi-clock-history" aria-hidden="true"></i>Service history</a></li><li><a href="dashboard-reports.html"><i class="bi bi-graph-up" aria-hidden="true"></i>Treatment reports</a></li><li><a href="dashboard-billing.html"><i class="bi bi-credit-card" aria-hidden="true"></i>Billing &amp; subscription</a></li><li><a href="dashboard-profile.html" aria-current="page"><i class="bi bi-house-gear" aria-hidden="true"></i>Profile &amp; property</a></li><li><a href="dashboard-messages.html"><i class="bi bi-chat-dots" aria-hidden="true"></i>Messages &amp; support</a></li></ul>
+        <p class="side-label">Switch</p>
+        <ul class="side-nav">
+          <li><a href="admin.html"><i class="bi bi-shield-lock" aria-hidden="true"></i>Admin dashboard</a></li>
+          <li><a href="index.html"><i class="bi bi-globe2" aria-hidden="true"></i>Back to website</a></li>
+          <li><a href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+        </ul>
+      </nav>
+      <div class="card p-3 mt-auto section-tint border-0">
+        <p class="small fw-bold mb-1"><i class="bi bi-patch-check-fill me-1" style="color:var(--ys-primary)" aria-hidden="true"></i>Guarantee active</p>
+        <p class="small text-muted mb-2">Pests back between visits? We re-treat free.</p>
+        <a href="dashboard-messages.html" class="btn btn-sm btn-primary">Request re-treatment</a>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="app-topbar">
+        <button class="icon-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#appSidebar" aria-controls="appSidebar" aria-label="Open navigation"><i class="bi bi-list" aria-hidden="true"></i></button>
+        <h1>Profile &amp; property</h1>
+        <div class="header-actions ms-auto">
+          <button type="button" class="btn btn-sm btn-ghost d-none d-md-inline-flex" data-dir-toggle aria-pressed="false" title="Switch text direction (preview Arabic/Hebrew layout)"><i class="bi bi-translate" aria-hidden="true"></i><span data-dir-label>RTL</span><span class="visually-hidden"> layout</span></button>
+          <button type="button" class="icon-btn " data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button>
+          <div class="dropdown">
+            <button class="icon-btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications, 2 unread">
+              <i class="bi bi-bell" aria-hidden="true"></i><span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger rounded-circle" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="min-width:300px">
+              <li class="px-2 py-1 small fw-bold text-muted">Notifications</li>
+              <li><a class="dropdown-item" href="dashboard-schedule.html"><i class="bi bi-calendar-check" aria-hidden="true"></i>Visit confirmed for Thursday</a></li>
+              <li><a class="dropdown-item" href="dashboard-reports.html"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i>New report: 94% effectiveness</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-ghost px-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="avatar avatar-initials" style="width:32px;height:32px;font-size:.8rem" aria-hidden="true">JR</span>
+              <span class="d-none d-md-inline">Jordan Rivera</span><i class="bi bi-chevron-down small d-none d-sm-inline" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="px-2 py-1"><strong class="d-block small">Jordan Rivera</strong><span class="small text-muted">Standard plan</span></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="dashboard-profile.html"><i class="bi bi-person" aria-hidden="true"></i>Profile</a></li>
+              <li><a class="dropdown-item" href="dashboard-billing.html"><i class="bi bi-credit-card" aria-hidden="true"></i>Billing</a></li>
+              <li><a class="dropdown-item" href="login.html"><i class="bi bi-box-arrow-right" aria-hidden="true"></i>Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main id="main" class="app-content" tabindex="-1">
+
+        <form class="needs-validation" novalidate data-toast="Profile saved. Your technician will see the changes before the next visit.">
+          <div class="alert alert-danger d-none" data-form-summary role="alert"></div>
+          <div class="row g-3 g-lg-4">
+            <div class="col-xl-8">
+              <section class="card p-4 mb-3 mb-lg-4" aria-labelledby="pf-contact">
+                <h2 id="pf-contact" class="h5 mb-3">Contact details</h2>
+                <div class="row g-3">
+                  <div class="col-md-6"><label for="p-first" class="form-label">First name *</label><input id="p-first" class="form-control" value="Jordan" required autocomplete="given-name"><div class="invalid-feedback"></div></div>
+                  <div class="col-md-6"><label for="p-last" class="form-label">Last name *</label><input id="p-last" class="form-control" value="Rivera" required autocomplete="family-name"><div class="invalid-feedback"></div></div>
+                  <div class="col-md-6"><label for="p-email" class="form-label">Email *</label><input id="p-email" type="email" class="form-control" value="jordan@example.com" required autocomplete="email"><div class="invalid-feedback"></div></div>
+                  <div class="col-md-6"><label for="p-phone" class="form-label">Mobile (for visit texts) *</label><input id="p-phone" type="tel" class="form-control" value="(404) 555-0142" required autocomplete="tel"><div class="invalid-feedback"></div></div>
+                </div>
+              </section>
+              <section class="card p-4 mb-3 mb-lg-4" aria-labelledby="pf-address">
+                <h2 id="pf-address" class="h5 mb-3">Service address</h2>
+                <div class="row g-3">
+                  <div class="col-12"><label for="p-street" class="form-label">Street address *</label><input id="p-street" class="form-control" value="482 Magnolia Lane" required autocomplete="address-line1"><div class="invalid-feedback"></div></div>
+                  <div class="col-md-5"><label for="p-city" class="form-label">City *</label><input id="p-city" class="form-control" value="Decatur" required autocomplete="address-level2"><div class="invalid-feedback"></div></div>
+                  <div class="col-md-3"><label for="p-state" class="form-label">State *</label><select id="p-state" class="form-select" required autocomplete="address-level1"><option value="">Choose state</option><option selected>GA</option><option>NC</option><option>TX</option><option>AZ</option><option>FL</option></select><div class="invalid-feedback"></div></div>
+                  <div class="col-md-4"><label for="p-zip" class="form-label">Zip *</label><input id="p-zip" class="form-control" value="30030" required pattern="\d{5}" maxlength="5" data-msg-pattern="Enter a 5-digit zip code." autocomplete="postal-code"><div class="invalid-feedback"></div></div>
+                </div>
+              </section>
+              <section class="card p-4 mb-3 mb-lg-4" aria-labelledby="pf-yard">
+                <h2 id="pf-yard" class="h5 mb-3">Yard details</h2>
+                <div class="row g-3">
+                  <div class="col-md-6"><label for="p-size" class="form-label">Treatable yard size</label><select id="p-size" class="form-select"><option>Up to &frac14; acre</option><option selected>&frac14; &ndash; &frac12; acre</option><option>&frac12; &ndash; 1 acre</option><option>Over 1 acre</option></select></div>
+                  <div class="col-md-6"><label for="p-product" class="form-label">Product preference</label><select id="p-product" class="form-select"><option selected>Technician&rsquo;s choice</option><option>Botanical / plant-based only</option></select></div>
+                  <div class="col-12"><fieldset><legend class="form-label fs-6">Features in your yard</legend><div class="row g-1"><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f0" ><label class="form-check-label" for="f0">Swimming pool</label></div></div><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f1" checked><label class="form-check-label" for="f1">Pond or water feature</label></div></div><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f2" ><label class="form-check-label" for="f2">Vegetable garden</label></div></div><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f3" ><label class="form-check-label" for="f3">Play set</label></div></div><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f4" checked><label class="form-check-label" for="f4">Deck or patio</label></div></div><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f5" checked><label class="form-check-label" for="f5">Shed</label></div></div><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f6" ><label class="form-check-label" for="f6">Beehives</label></div></div><div class="col-sm-6"><div class="form-check"><input class="form-check-input" type="checkbox" id="f7" ><label class="form-check-label" for="f7">Chickens</label></div></div></div></fieldset></div>
+                </div>
+              </section>
+              <section class="card p-4" aria-labelledby="pf-notes">
+                <h2 id="pf-notes" class="h5 mb-3">Pets, children &amp; access</h2>
+                <div class="row g-3">
+                  <div class="col-md-6"><label for="p-pets" class="form-label">Pets &amp; children notes</label><textarea id="p-pets" class="form-control" rows="3">Golden retriever (Maple). Keep inside during treatment. Kids&rsquo; play set in back left corner &mdash; please skip.</textarea><div class="form-text">We&rsquo;ll text you when it&rsquo;s dry and safe.</div></div>
+                  <div class="col-md-6"><label for="p-gate" class="form-label">Gate access instructions *</label><textarea id="p-gate" class="form-control" rows="3" required minlength="4">Side gate on the left, code 4417#. Latch sticks &mdash; lift up.</textarea><div class="invalid-feedback"></div></div>
+                </div>
+              </section>
+            </div>
+            <div class="col-xl-4">
+              <section class="card overflow-hidden mb-3 mb-lg-4" aria-labelledby="pf-map">
+                <picture><source srcset="../assets/images/dashboard-property.webp" type="image/webp"><img src="../assets/images/dashboard-property.jpg" alt="Overhead illustration of your property boundary with house, pool and trees" width="1200" height="750" loading="lazy" decoding="async" class="card-img-top"></picture>
+                <div class="p-4"><h2 id="pf-map" class="h6 mb-1">Treatment map</h2><p class="small text-muted mb-0">Mapped during your inspection on Apr 28. Ask your technician to update it any time.</p></div>
+              </section>
+              <section class="card p-4 mb-3 mb-lg-4" aria-labelledby="pf-notify">
+                <h2 id="pf-notify" class="h5 mb-3">Notifications</h2>
+                <div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="n1" checked><label class="form-check-label" for="n1">Text the day before a visit</label></div>
+                <div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="n2" checked><label class="form-check-label" for="n2">Text when treatment is dry</label></div>
+                <div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="n3"><label class="form-check-label" for="n3">Monthly seasonal tips email</label></div>
+              </section>
+              <button type="submit" class="btn btn-accent btn-lg w-100"><i class="bi bi-check2" aria-hidden="true"></i>Save changes</button>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/dashboard.js" defer></script>
+</body>
+</html>
