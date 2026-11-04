@@ -417,6 +417,14 @@
         $$('a.nav-link:not(.dropdown-toggle)', nav).forEach((a) => a.addEventListener('click', () => {
           if (nav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(nav).hide();
         }));
+        // The mobile menu overlays the page, so also close it on outside tap, Escape,
+        // or when the viewport grows past the desktop breakpoint.
+        const hide = () => { if (nav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(nav).hide(); };
+        document.addEventListener('click', (e) => { if (!e.target.closest('.site-header')) hide(); });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && nav.classList.contains('show')) { hide(); const t = $('.navbar-toggler'); if (t) t.focus(); }
+        });
+        window.matchMedia('(min-width: 992px)').addEventListener('change', (e) => { if (e.matches) hide(); });
       }
       // Bootstrap tooltips
       if (window.bootstrap) $$('[data-bs-toggle="tooltip"]').forEach((el) => new bootstrap.Tooltip(el));

@@ -81,6 +81,9 @@
   --ys-ease: cubic-bezier(.2, .7, .2, 1);
   --ys-dur: 200ms;
   --ys-touch: 44px;               /* WCAG minimum touch target          */
+  --ys-btn-h-sm: 36px;            /* button heights — used on every page */
+  --ys-btn-h: 44px;               /* = --ys-touch, matches .icon-btn     */
+  --ys-btn-h-lg: 52px;
 
   /* Map onto Bootstrap 5.3 variables so components inherit the brand */
   --bs-body-font-family: var(--ys-font-body);
@@ -220,15 +223,29 @@ a { text-underline-offset: 0.2em; }
 .form-switch .form-check-input { width: 2.5em; }
 
 /* 04. Buttons -------------------------------------------------------------- */
+/* One button system for every page: three fixed heights (36 / 44 / 52px), pill radius,
+   700 weight, 1px border. Vertical padding is small so the min-height sets the height. */
 .btn {
-  --bs-btn-padding-x: var(--space-3); --bs-btn-padding-y: 10px;
+  --bs-btn-padding-x: var(--space-3); --bs-btn-padding-y: 8px;
+  --bs-btn-font-size: 1rem; --bs-btn-line-height: 1.25; --bs-btn-border-width: 1px;
   --bs-btn-font-weight: 700; --bs-btn-border-radius: var(--ys-radius-pill);
+  min-height: var(--ys-btn-h);
   display: inline-flex; align-items: center; justify-content: center; gap: var(--space-1);
   transition: transform var(--ys-dur) var(--ys-ease), box-shadow var(--ys-dur) var(--ys-ease),
               background-color var(--ys-dur), color var(--ys-dur), border-color var(--ys-dur);
 }
-.btn-lg { --bs-btn-padding-x: var(--space-4); --bs-btn-padding-y: 14px; --bs-btn-font-size: var(--ys-fs-lg); }
-.btn-sm { --bs-btn-padding-x: var(--space-2); --bs-btn-padding-y: 6px; min-height: 36px; }
+.btn-lg { --bs-btn-padding-x: var(--space-4); --bs-btn-padding-y: 10px; --bs-btn-font-size: 1.0625rem; --bs-btn-border-radius: var(--ys-radius-pill); min-height: var(--ys-btn-h-lg); }
+.btn-sm { --bs-btn-padding-x: var(--space-2); --bs-btn-padding-y: 4px; --bs-btn-font-size: .875rem; --bs-btn-border-radius: var(--ys-radius-pill); min-height: var(--ys-btn-h-sm); }
+.btn i { font-size: 1.05em; line-height: 1; }
+.btn-outline-light {
+  --bs-btn-color: #fff; --bs-btn-border-color: rgba(255, 255, 255, .6);
+  --bs-btn-hover-color: #fff; --bs-btn-hover-bg: rgba(255, 255, 255, .14); --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-color: #fff; --bs-btn-active-bg: rgba(255, 255, 255, .2); --bs-btn-active-border-color: #fff;
+}
+.btn-danger {
+  --bs-btn-bg: var(--ys-danger); --bs-btn-border-color: var(--ys-danger);
+  --bs-btn-hover-bg: #93190f; --bs-btn-hover-border-color: #93190f; --bs-btn-active-bg: #93190f; --bs-btn-active-border-color: #93190f;
+}
 .btn-primary {
   --bs-btn-bg: var(--ys-primary); --bs-btn-border-color: var(--ys-primary);
   --bs-btn-hover-bg: var(--ys-primary-strong); --bs-btn-hover-border-color: var(--ys-primary-strong);
@@ -263,9 +280,8 @@ a { text-underline-offset: 0.2em; }
   color: var(--ys-text); transition: background-color var(--ys-dur);
 }
 .icon-btn:hover { background: var(--ys-surface-2); }
-/* Header text-direction toggle: icon + short label, pill-shaped */
-.icon-btn.dir-btn { width: auto; grid-auto-flow: column; gap: 6px; padding-inline: 14px; font-size: var(--ys-fs-xs); font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
-.icon-btn.dir-btn i { font-size: 1rem; }
+/* Text-direction toggle: text-only "RTL"/"LTR" pill, same height as every other header control */
+.icon-btn.dir-btn { width: auto; min-width: var(--ys-touch); display: inline-flex; align-items: center; justify-content: center; padding-inline: 14px; font-size: var(--ys-fs-xs); font-weight: 800; letter-spacing: .06em; line-height: 1; white-space: nowrap; }
 .icon-btn.dir-btn[aria-pressed="true"] { background: var(--ys-primary-soft); border-color: var(--ys-primary); color: var(--ys-primary-strong); }
 
 /* 05. Header & navigation -------------------------------------------------- */
@@ -275,16 +291,32 @@ a { text-underline-offset: 0.2em; }
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--ys-border);
 }
-.navbar { --bs-navbar-padding-y: var(--space-1); }
-.navbar-brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--ys-font-heading); font-weight: 800; font-size: 1.375rem; color: var(--ys-text); }
+.navbar { --bs-navbar-padding-y: 14px; }
+.navbar-brand { display: inline-flex; align-items: center; gap: 10px; height: var(--ys-touch); padding-block: 0; margin-block: 0; line-height: 1; font-family: var(--ys-font-heading); font-weight: 800; font-size: 1.375rem; color: var(--ys-text); }
 .navbar-brand:hover { color: var(--ys-text); }
-.brand-mark { width: 36px; height: 36px; flex: none; }
-.navbar .nav-link { display: flex; align-items: center; font-weight: 600; color: var(--ys-text); padding-inline: 12px !important; border-radius: var(--ys-radius-pill); }
+/* Brand logo (image lockup). Dark-text version on light surfaces, light-text version
+   in dark mode and on the dark footer. Height is set per context with --ys-logo-h. */
+.navbar-brand:has(.brand-logo) { height: auto; padding: 0; margin-inline-end: var(--space-2); }
+.brand-logo { display: block; height: var(--ys-logo-h, 52px); width: auto; max-width: none; flex: none; }
+.brand-logo-light { display: none; }
+[data-bs-theme="dark"] .brand-logo-dark, .site-footer .brand-logo-dark { display: none; }
+[data-bs-theme="dark"] .brand-logo-light, .site-footer .brand-logo-light { display: block; }
+.navbar { --bs-navbar-padding-y: 10px; }
+.site-footer .navbar-brand { --ys-logo-h: 84px; }
+.auth-head .auth-brand { --ys-logo-h: 80px; }
+.app-sidebar .navbar-brand { --ys-logo-h: 50px; }
+.utility-page .navbar-brand { --ys-logo-h: 64px; }
+@media (max-width: 575.98px) { .site-header .navbar-brand { --ys-logo-h: 46px; } .auth-head .auth-brand { --ys-logo-h: 68px; } }
+.navbar .nav-link { display: flex; align-items: center; height: var(--ys-touch); padding-block: 0 !important; line-height: 1; font-weight: 600; color: var(--ys-text); padding-inline: 12px !important; border-radius: var(--ys-radius-pill); }
 .navbar .nav-link:hover { color: var(--ys-primary-strong); background: var(--ys-primary-soft); }
 .navbar .nav-link.active, .navbar .nav-link[aria-current="page"] { color: var(--ys-primary-strong); background: var(--ys-primary-soft); }
 .navbar-toggler { border: 1px solid var(--ys-border); border-radius: var(--ys-radius-sm); width: var(--ys-touch); padding: 0; }
 .navbar-toggler:focus { box-shadow: var(--ys-focus); }
 .header-actions { display: flex; align-items: center; gap: var(--space-1); }
+/* Every control in the header row shares one 44px height and one font size */
+.site-header .header-actions > .btn, .site-header .header-actions > .icon-btn,
+.app-topbar .header-actions .btn, .app-topbar .header-actions .icon-btn { height: var(--ys-touch); min-height: var(--ys-touch); --bs-btn-padding-y: 0; }
+.site-header .header-actions > .btn { --bs-btn-font-size: .9375rem; --bs-btn-padding-y: 0; }
 .dropdown-menu { border-color: var(--ys-border); border-radius: var(--ys-radius); box-shadow: var(--ys-shadow); padding: var(--space-1); }
 .dropdown-item { border-radius: var(--ys-radius-sm); display: flex; align-items: center; gap: var(--space-1); }
 .dropdown-item:active { background: var(--ys-primary); }
@@ -657,7 +689,7 @@ a { text-underline-offset: 0.2em; }
 .feature-num { font-family: var(--ys-font-heading); font-weight: 800; font-size: 4rem; line-height: 1; color: transparent;
   -webkit-text-stroke: 2px var(--ys-primary); margin-bottom: var(--space-1); }
 
-.pest-card { background: var(--ys-surface); border: 1px solid var(--ys-border); border-radius: var(--ys-radius); padding: var(--space-3); height: 100%; transition: border-color var(--ys-dur), transform var(--ys-dur) var(--ys-ease); }
+.pest-card { display: flex; flex-direction: column; background: var(--ys-surface); border: 1px solid var(--ys-border); border-radius: var(--ys-radius); padding: var(--space-3); height: 100%; transition: border-color var(--ys-dur), transform var(--ys-dur) var(--ys-ease); }
 .pest-card:hover { border-color: var(--ys-primary); transform: translateY(-3px); }
 .season-bar { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; margin-top: var(--space-2); }
 .season-bar span { height: 8px; border-radius: 2px; background: var(--ys-surface-2); }
@@ -782,9 +814,7 @@ a { text-underline-offset: 0.2em; }
   .header-actions { gap: 6px; flex-shrink: 0; }
   .header-actions .btn { --bs-btn-padding-x: 12px; white-space: nowrap; font-size: .9375rem; }
   .navbar .nav-link { padding-inline: 6px !important; }
-  /* direction toggle: icon-only here (label stays available to screen readers) */
-  .icon-btn.dir-btn { width: var(--ys-touch); padding-inline: 0; }
-  .icon-btn.dir-btn [data-dir-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .icon-btn.dir-btn { padding-inline: 10px; }
 }
 
 /* Contact page: no blank gap under the zip checker, and checkbox lines up with the form fields */
@@ -806,3 +836,43 @@ a { text-underline-offset: 0.2em; }
 /* Password fields: Bootstrap's valid/invalid icon sits under the show/hide button, so drop it there. */
 .password-wrap .form-control.is-invalid,
 .password-wrap .form-control.is-valid { background-image: none; }
+
+/* ==========================================================================
+   v1.3 review fixes
+   ========================================================================== */
+
+/* Home 2 — "What we stop": description grows so every season bar and month
+   row sits on the same line across the grid, whatever the text length. */
+.pest-card > p { flex: 1 1 auto; min-height: 3em; }
+.pest-card .season-bar { margin-top: var(--space-2); }
+
+/* Testimonial carousel: initials avatar when there is no photo */
+.quote-carousel .avatar-initials.quote-avatar { display: grid; place-items: center; font-size: 1rem; background: rgba(255, 255, 255, .16); color: #fff; }
+
+/* Mobile/tablet menu (< 992px): the menu drops down OVER the page instead of
+   pushing the hero down. Inner padding lines up with the container. */
+@media (max-width: 991.98px) {
+  .site-header .navbar { position: relative; --ys-nav-w: 100%; }
+  .site-header .navbar-collapse {
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 1030;
+    background: var(--ys-surface); border-bottom: 1px solid var(--ys-border); box-shadow: var(--ys-shadow-lg);
+    padding: var(--space-1) calc((100% - var(--ys-nav-w)) / 2 + 12px) var(--space-3);
+    max-height: calc(100vh - 72px); max-height: calc(100dvh - 72px); overflow-y: auto; overscroll-behavior: contain;
+  }
+  .site-header .navbar-collapse .header-actions { border-top: 1px solid var(--ys-border); margin-top: var(--space-1); }
+}
+@media (min-width: 576px) and (max-width: 991.98px) { .site-header .navbar { --ys-nav-w: 540px; } }
+@media (min-width: 768px) and (max-width: 991.98px) { .site-header .navbar { --ys-nav-w: 720px; } }
+
+/* Auth pages: centred brand + heading, theme/direction toggles in the page's top-right corner */
+.auth-wrap { position: relative; }
+.auth-tools { position: absolute; top: var(--space-3); inset-inline-end: var(--space-3); z-index: 5; display: flex; align-items: center; gap: var(--space-1); }
+.auth-tools .icon-btn { box-shadow: var(--ys-shadow-sm); }
+.auth-head { text-align: center; margin-bottom: var(--space-4); }
+.auth-head .auth-brand { justify-content: center; margin: 0 auto var(--space-4); }
+.auth-head .text-muted { max-width: 34ch; margin-inline: auto; }
+.auth-divider { display: flex; align-items: center; gap: 12px; margin: var(--space-3) 0; font-size: var(--ys-fs-sm); color: var(--ys-text-muted); }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1 1 auto; height: 1px; background: var(--ys-border); }
+.btn-social i { font-size: 1.125rem; }
+@media (max-width: 1023.98px) { .auth-panel { padding-top: calc(var(--space-3) + var(--ys-touch) + var(--space-3)); } }
+.site-footer .navbar-brand { --ys-logo-h: 60px; }
